@@ -22,7 +22,7 @@ Rediseña la **ventana principal**:
 - Agrandándala y agrégale un gran panel central con un *TextArea* y otro lateral con los botones. Agrega una barra inferior de estado con funcionalidad. 
 - Agrega un menú superior con las opciones de **archivo** y **edición**.
 	- El menú archivo tendrá la opción de abrir y guardar archivos de tipo texto cuyo contenido se cargará en el TextArea central de la ventana principal.
-	- Agrega un **selector de color** a las opciones del menú creado anteriormente, cuya función sea cambiar el color de fondo de los JPanel y de toda la interfaz. Para ello haz uso de los constructores de las clases para pasar la información.
+	- Agrega un **selector de color** a las opciones del menú creado anteriormente, cuya función sea cambiar el color de fondo de los JPanel y de toda la interfaz.
 
 ![](media/9cd713b474093125d5571d49cd5b0243.png)
 
