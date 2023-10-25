@@ -1,4 +1,4 @@
-# Práctica 3.2 Agregar JTable y tabs
+# Práctica 3.2 Agregar JTable y Tabs
 
 ## Parte 1
 
