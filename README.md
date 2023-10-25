@@ -2,7 +2,7 @@
 
 ## Parte 1
 
-La práctica consiste en utilizando una **guía de estilo**, personalizar mediante paneles las ventanas de la aplicación desarrollada previamente:
+La práctica consiste en utilizando una **guía de estilo** y siguiendo reglas de **usabilidad** vistas, personalizar mediante paneles las ventanas de la aplicación desarrollada previamente:
 -   Se deberá de utilizar *JPanels* sobre la ventana y como **layouts** el *Free Design* para la ventana principal y el *Null Layout* para los JPanels.
 -   Se deberá hacer un estudio de la *paleta de colores* específica y justificar su uso así como el de la *tipografía* usada. Rellena el documento de la **guía de estilo** adjunto al proyecto.
 -   La **barra superior** de las ventanas deberá de ser sustituida por barras personalizadas creadas por nosotros, que tengan su misma funcionalidad (excepto por el momento mover ventana)
@@ -12,8 +12,6 @@ La práctica consiste en utilizando una **guía de estilo**, personalizar median
 
 
 ## Parte 2
-
-Agrega dos paquetes llamados *VistaControlador* y *Modelo* para organizar mejor las clases de tu aplicación.
 
 Mejora el ejercicio anterior permitiendo **mover** todas las ventanas desde su *JPanel* personalizado.
 
