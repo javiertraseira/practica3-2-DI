@@ -5,24 +5,22 @@
 La práctica consiste en utilizando una **guía de estilo** y siguiendo algunas de las reglas básicas de **usabilidad** vistas, personalizar y reorganizar mediante paneles las ventanas de la aplicación desarrollada previamente:
 
 -   Se deberá de utilizar *JPanels* sobre la ventana y como **layouts** el *Free Design* para la ventana principal y el *Null Layout* para los JPanels.
--   Se deberá hacer un estudio de la **usabilidad** de la aplicación (especialmente la parte de creación de usuarios nuevos), así como justificar el uso de una *paleta de colores* específica y el de una *fuente tipográfica* específica. Rellena el documento de la **guía de estilo** adjunto al proyecto.
+-   Se deberá hacer un estudio de la **usabilidad** de la aplicación (especialmente la parte de creación de usuarios nuevos), así como justificar el uso de una *paleta de colores* específica y una *fuente tipográfica*. Rellena el documento de la **guía de estilo** adjunto al proyecto.
 -   La **barra superior** de las ventanas deberá de ser sustituida por barras personalizadas creadas por nosotros, que tengan su misma funcionalidad (excepto por el momento mover ventana).
 
-    ![](media/3605716fc96796a96a8819be129560a7.png)
+   ![](media/3605716fc96796a96a8819be129560a7.png)
 
 
 ## Parte 2
 
-Mejora el ejercicio anterior permitiendo **mover** todas las ventanas desde su *JPanel* personalizado.
-
 Rediseña la **ventana principal**:
-
 - Agrandándala y agrégale un gran panel central con un *TextArea* y otro lateral con los botones. Agrega una barra inferior de estado con funcionalidad. 
 - Agrega un menú superior con las opciones de **archivo** y **edición**.
-	- El menú archivo tendrá la opción de abrir y guardar archivos de tipo texto cuyo contenido se cargará en el TextArea central de la ventana principal.
+	- El menú **archivo** tendrá la opción de abrir y guardar archivos de tipo texto cuyo contenido se cargará en el *JTextArea* central de la ventana principal.
 	- Agrega un **selector de color** a las opciones del menú creado anteriormente, cuya función sea cambiar el color de fondo de los JPanel y de toda la interfaz.
-
 ![](media/9cd713b474093125d5571d49cd5b0243.png)
+
+Mejora el ejercicio anterior permitiendo **mover** todas las ventanas desde su *JPanel* personalizado.
 
 ## Parte 3
 
