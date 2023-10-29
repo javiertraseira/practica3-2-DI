@@ -1,8 +1,8 @@
-# Práctica 3.1 Usabilidad básica y guía de estilo de la aplicación
+# Práctica 3.1 Usabilidad básica (guía de estilo) e instalación
 
 ## Parte 1
 
-La práctica consiste en utilizando una **guía de estilo** y siguiendo algunas de las reglas básicas de **usabilidad** vistas, personalizar y reorganizar mediante paneles las ventanas de la aplicación desarrollada previamente:
+La práctica consiste en generar una **guía de estilo** y seguir algunas de las reglas básicas de **usabilidad** vistas, personalizando y reorganizando mediante paneles las ventanas de la aplicación desarrollada previamente:
 
 -   Se deberá de utilizar *JPanels* sobre la ventana y como **layouts** el *Free Design* para la ventana principal y el *Null Layout* para los JPanels.
 -   Se deberá hacer un estudio de la **usabilidad** de la aplicación (especialmente la parte de creación de usuarios nuevos), así como justificar el uso de una *paleta de colores* específica y una *fuente tipográfica*. Rellena el documento de la **guía de estilo** adjunto al proyecto.
