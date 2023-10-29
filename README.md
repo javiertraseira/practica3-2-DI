@@ -14,7 +14,8 @@ Dentro de la ventana del **selector de color** haz lo propio creando otras dos p
 ## Parte 2
 
 Crea un nuevo proyecto utilizando **Maven** y copia las clases y paquetes del antiguo proyecto en el nuevo. 
-Busca y resuelve las **dependencias** usadas por Maven para lograr hacerlo funcionar.
+- Busca y resuelve las **dependencias** usadas por Maven para lograr hacerlo funcionar.
+- Empaqueta nuevamente el proyecto en formato JAR y genera el ejecutable.
 
 ## Parte 3 (opcional)
 
