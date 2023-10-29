@@ -13,6 +13,11 @@ Dentro de la ventana del **selector de color** haz lo propio creando otras dos p
 
 ## Parte 2
 
+Crea un nuevo proyecto utilizando **Maven** y copia las clases y paquetes del antiguo proyecto en el nuevo. 
+Busca y resuelve las **dependencias** usadas por Maven para lograr hacerlo funcionar.
+
+## Parte 3 (opcional)
+
 Mejora la ventana creando una *JToolbar* superior con los botones de acción rápida más utilizados (abrir, guardar) con sus respectivos iconos.
 
 ![](media/10-28_12_56_26.png)
@@ -21,9 +26,7 @@ Opcional: agrega un botón deshacer relativo al texto introducido en la pestaña
 
 Opcional: Implementa la libería *Flatlaf* en tu proyecto e implementála. Ayúdate de su implementación para usar iconos en formato *svg*.
 
-## Parte 3
 
-Crea un nuevo proyecto utilizando **Maven** y copia las clases y paquetes del antiguo proyecto en el nuevo. Busca y resuelve las **dependencias** usadas por Maven para lograr hacerlo funcionar.
 
 
 
