@@ -26,6 +26,6 @@ Mejora el ejercicio anterior permitiendo **mover** todas las ventanas desde su b
 
 Busca la forma de generar un **ejecutable** para *Windows_64* usando el fichero **jar** generado de tu proyecto. Agrégale un **icono** a tu aplicación.
 
-Crea un instalador para tu aplicación usando el programa *installa4j* siguiendo el tutorial desde el [siguiente enlace.](https://www.raulprietofernandez.net/blog/programacion/.como-crear-un-instalador-para-aplicaciones-java-con-install4j)
+Crea un instalador para tu aplicación usando el programa *installa4j* siguiendo el tutorial desde el [siguiente enlace.](https://www.raulprietofernandez.net/blog/programacion/como-crear-un-instalador-para-aplicaciones-java-con-install4j)
 
 Opcional: Busca la forma de mejorar el selector de color por defecto utilizado, ya sea en repositorios u otras clases en Internet. Haz lo mismo con el selector de ficheros por defecto.
