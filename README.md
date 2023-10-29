@@ -20,12 +20,12 @@ Rediseña la **ventana principal**:
 	- Agrega un **selector de color** a las opciones del menú creado anteriormente, cuya función sea cambiar el color de fondo de los JPanel y de toda la interfaz.
 ![](media/9cd713b474093125d5571d49cd5b0243.png)
 
-Mejora el ejercicio anterior permitiendo **mover** todas las ventanas desde su *JPanel* personalizado.
+Mejora el ejercicio anterior permitiendo **mover** todas las ventanas desde su barra superior personalizada.
 
 ## Parte 3
 
-Busca la forma de generar un **ejecutable** para *Windows_64* usando el fichero jar generado. Agrégale un **icono** a tu aplicación.
+Busca la forma de generar un **ejecutable** para *Windows_64* usando el fichero **jar** generado de tu proyecto. Agrégale un **icono** a tu aplicación.
 
 Crea un instalador para tu aplicación usando el programa *installa4j* siguiendo el tutorial desde el [siguiente enlace.](https://www.raulprietofernandez.net/blog/programacion/.como-crear-un-instalador-para-aplicaciones-java-con-install4j)
 
-Opcional: Busca la forma de mejorar el selector de color por defecto utilizado, ya sea en repositorios u otras clases en Internet. Haz lo mismo con el el selector de ficheros por defecto.
+Opcional: Busca la forma de mejorar el selector de color por defecto utilizado, ya sea en repositorios u otras clases en Internet. Haz lo mismo con el selector de ficheros por defecto.
