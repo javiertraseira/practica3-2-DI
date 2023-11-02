@@ -27,7 +27,7 @@ Mejora el ejercicio anterior permitiendo **mover** todas las ventanas desde su b
 
 ## Parte 3
 
-Busca la forma de generar un **ejecutable** para *Windows_64* usando el fichero **jar** generado de tu proyecto. Agrégale un **icono** propio a tu aplicación.
+Busca la forma de generar un **ejecutable** para *Windows_64* usando el fichero **jar** generado de tu proyecto usando la aplicación *Launch4J*. Agrégale un **icono** propio a tu aplicación.
 
 Crea un **instalador** para tu aplicación usando el programa *installa4j* siguiendo los pasos del siguiente tutorial desde [este enlace.](https://www.raulprietofernandez.net/blog/programacion/como-crear-un-instalador-para-aplicaciones-java-con-install4j)
 
