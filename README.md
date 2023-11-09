@@ -4,6 +4,13 @@ Esta práctica sirve para encaminar la entrega del **primer proyecto trimestral*
 
 ## Parte 1
 
+Crea un nuevo proyecto utilizando **Maven** y copia las clases y paquetes del antiguo proyecto en el nuevo:
+- Busca y resuelve las **dependencias** usadas por Maven para lograr hacerlo funcionar.
+- Empaqueta nuevamente el proyecto en formato *JAR* y genera el ejecutable.
+
+
+## Parte 2
+
 Agrega un *JTabbedPane* con al menos dos pestañas en el panel principal:
 
 - Una pestaña para mostrar el campo de contenido del fichero de texto. Agrega la opción para poder editar su contenido y también poder guardar los cambios desde el menú archivo.
@@ -13,11 +20,7 @@ Agrega un *JTabbedPane* con al menos dos pestañas en el panel principal:
 
 Dentro de la ventana del **selector de color** haz lo propio creando otras dos pestañas; una para seleccionar el color de fondo de la interfaz y la otra para el color de las barras de título.
 
-## Parte 2
 
-Crea un nuevo proyecto utilizando **Maven** y copia las clases y paquetes del antiguo proyecto en el nuevo:
-- Busca y resuelve las **dependencias** usadas por Maven para lograr hacerlo funcionar.
-- Empaqueta nuevamente el proyecto en formato *JAR* y genera el ejecutable.
 
 ## Parte 3 (opcional)
 
