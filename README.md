@@ -9,7 +9,7 @@ Crea un nuevo proyecto utilizando **Maven** y copia las clases y paquetes del an
 - Empaqueta nuevamente el proyecto en formato *JAR* y genera el ejecutable.
 
 
-## Parte 2
+## Parte 2 (opcional)
 
 Agrega un *JTabbedPane* con al menos dos pestañas en el panel principal:
 
