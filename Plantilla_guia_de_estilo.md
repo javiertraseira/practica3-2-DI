@@ -1,4 +1,6 @@
-# Plantilla guía de estilo (Desarrollo de Interfaces)
+# Plantilla guía de estilo práctica 3-1 (Desarrollo de Interfaces)
+
+- Nombre y apellidos:
 
 ## 1. Principios de diseño y usabilidad básicos 
 
