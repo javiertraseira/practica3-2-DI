@@ -23,7 +23,7 @@ Rediseña la **ventana principal** para que a partir de ahora se le añada conte
 	- Agrega un **selector de color** a las opciones del menú de edición, cuya función sea cambiar el color de fondo de los *JPanel* y de toda la interfaz.
 ![](media/9cd713b474093125d5571d49cd5b0243.png)
 
-Mejora el ejercicio anterior permitiendo **mover** todas las ventanas desde su barra superior personalizada.
+- Mejora el ejercicio anterior permitiendo **mover** todas las ventanas desde su barra superior personalizada.
 
 ## Parte 3
 
