@@ -17,6 +17,7 @@ La práctica consiste en generar una **guía de estilo** (rellenando el document
 ## Parte 2
 
 Rediseña la **ventana principal** para que a partir de ahora se le añada contenido y funcionalidades:
+- Crea un nuevo paquete llamado **media** donde almacenar todas las imágenes *png* o iconos que utilices en la aplicación a partir de ahora.
 - Agrándala y agrégale un gran panel central con un *JTextArea* y otro lateral con los botones. Agrega una barra inferior de estado con funcionalidad. 
 - Agrega un menú superior con las opciones de **archivo** y **edición**:
 	- El menú **archivo** tendrá la opción de abrir y guardar archivos de tipo texto cuyo contenido se cargará en el *JTextArea* central de la ventana principal.
