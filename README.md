@@ -44,14 +44,14 @@ Puede seguir los pasos desde el siguiente tutorial desde [este enlace.](https://
 
 - Descarga e instala el comando desde la página de Oracle.
 - Ejecuta el siguiente comando en el terminal:
-
 `jpackage --input ruta/al/jar --name NombreDeTuApp --main-jar TuArchivo.jar --main-class MainClass`
 
 
-Opcional: Busca la forma de mejorar el selector de color por defecto utilizado, ya sea en repositorios u otras clases en Internet. Haz lo mismo con el selector de ficheros por defecto.
+## Otras mejoras opcionales evaluable
 
-Opcional: Investiga la forma de integrar el funcionamiento de la Base de Datos de tu aplicación mediante el instalador (evaluable para el proyecto)
+Busca la forma de mejorar el selector de color por defecto utilizado, ya sea en repositorios u otras clases en Internet. Haz lo mismo con el selector de ficheros por defecto.
 
+Investiga la forma de integrar el funcionamiento de la Base de Datos de tu aplicación mediante el instalador.
 
 ## Pruebas (testing)
 
@@ -65,7 +65,7 @@ Opcional: Investiga la forma de integrar el funcionamiento de la Base de Datos d
 | 06             | Funcionalidad para abrir y guardar archivos de texto desde el menú "Archivo"                                              | Archivo de texto seleccionado                                                             | Contenido del archivo cargado o guardado en el `JTextArea`                                              |
 | 07             | Verificación de funcionalidad del selector de color en el menú "Edición"                                                  | Selección de un color en el selector                                                      | Color de fondo del `JPanel` y de la interfaz cambiado correctamente                                    |
 | 08             | Mover las ventanas desde la barra superior personalizada                                                                 | Intento de mover la ventana desde la barra personalizada                                   | La ventana se puede mover desde la barra superior personalizada                                        |
-| 09             | Generación de un ejecutable de Windows_64 con Launch4J                                                                   | Archivo `jar` del proyecto                                                                 | Ejecutable `.exe` generado correctamente                                                               |
+| 09             | Generación de un ejecutable de Windows_64 con `Launch4J` o `jpackage`                                                      | Archivo `jar` del proyecto                                                                 | Ejecutable `.exe` generado correctamente                                                               |
 | 10             | Creación de un instalador con Install4J                                                                                  | Configuración de un instalador para Windows                                                | Instalador generado que permite instalar la aplicación en Windows                                      |
 | 11             | Mejora del selector de color predeterminado                                                                              | Uso de un selector de color personalizado                                                  | El nuevo selector de color reemplaza el predeterminado y ofrece más opciones                           |
 | 12             | Mejora del selector de archivos predeterminado                                                                           | Uso de un selector de archivos personalizado                                               | El nuevo selector de archivos reemplaza el predeterminado y ofrece más funcionalidad                   |
