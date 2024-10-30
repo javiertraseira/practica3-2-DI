@@ -27,9 +27,26 @@ Rediseña la **ventana principal** para que a partir de ahora se le añada conte
 
 ## Parte 3
 
-Busca la forma de generar un **ejecutable** para *Windows_64* usando el fichero **jar** generado de tu proyecto usando la aplicación *Launch4J*. Agrégale un **icono** propio a tu aplicación.
+Busca la forma de generar un **ejecutable** para *Windows_64* usando el fichero **jar** generado de tu proyecto usando la aplicación *Launch4J* o mediante el comando `jpackage` de Oracle. No te olvides de agregarle un **icono** propio a tu aplicación.
 
-Crea un **instalador** para tu aplicación usando el programa *installa4j* siguiendo los pasos del siguiente tutorial desde [este enlace.](https://www.raulprietofernandez.net/blog/programacion/como-crear-un-instalador-para-aplicaciones-java-con-install4j)
+### Launch4J 
+
+- Descarga e instala Launch4j.
+- Crea un nuevo proyecto en Launch4j y especifica el archivo JAR de tu proyecto en la sección "Jar".
+- Configura los parámetros que necesites, como la versión mínima de Java y el icono del ejecutable.
+- Selecciona el archivo de salida (.exe) y guarda el proyecto.
+- Haz clic en "Build wrapper" para generar el .exe.
+
+Puede seguir los pasos desde el siguiente tutorial desde [este enlace.](https://www.raulprietofernandez.net/blog/programacion/como-crear-un-instalador-para-aplicaciones-java-con-install4j)
+
+
+### Comando jpackage (Oracle)
+
+- Descarga e instala el comando desde la página de Oracle.
+- Ejecuta el siguiente comando en el terminal:
+
+`jpackage --input ruta/al/jar --name NombreDeTuApp --main-jar TuArchivo.jar --main-class MainClass`
+
 
 Opcional: Busca la forma de mejorar el selector de color por defecto utilizado, ya sea en repositorios u otras clases en Internet. Haz lo mismo con el selector de ficheros por defecto.
 
