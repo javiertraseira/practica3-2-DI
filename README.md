@@ -4,11 +4,11 @@ Esta práctica sirve como base de varios de los contenidos mínimos que debe cum
 
 ## Parte 1
 
-La práctica consiste en generar una **guía de estilo** rellenando un documento adjunto y seguir algunas de las reglas básicas de **usabilidad** vistas, personalizando y reorganizando mediante paneles las ventanas de la aplicación desarrollada previamente:
+La práctica consiste en generar una **guía de estilo** rellenando un documento adjunto y seguir algunas de las reglas básicas de **usabilidad** vistas, personalizando y reorganizando el diseño, la barra superior y mediante paneles la aplicación desarrollada previamente:
 
--   Se deberá hacer un estudio de la **usabilidad** de la aplicación (especialmente la parte de creación de usuarios nuevos), así como justificar el uso de una *paleta de colores* específica y una *fuente tipográfica*. Rellena el documento de la [guía de estilo](*Plantilla_guia_de_estilo.md*) adjunta al proyecto.
+-   Se deberá hacer un estudio de la **usabilidad** de la aplicación (especialmente la parte de creación de usuarios nuevos), así como justificar el uso de una *paleta de colores* específica y una *fuente tipográfica*. Rellena el documento de la [guía de estilo](Plantilla_guia_de_estilo.md) adjunto al proyecto.
 -   La **barra superior** de las ventanas deberá de ser sustituida por una barra personalizada creada por nosotros, con su misma funcionalidad (excepto por el momento mover la ventana). Nota: usar para ello la propiedad *undecorated* de un JFrame.
--   Se deberán de utilizar *JPanels* sobre la ventana y se recomienda como **layout** el *Free Design* para la ventana superior y el *Null Layout* para el panel principal.
+-   Se deberán de utilizar *JPanels* sobre la ventana y se recomienda utilizar como **layout** el *Free Design* para la ventana superior y el *Null Layout* para el panel principal.
 
 
    ![](media/3605716fc96796a96a8819be129560a7.png)
@@ -18,12 +18,11 @@ La práctica consiste en generar una **guía de estilo** rellenando un documento
 
 Rediseña la **ventana principal** para que a partir de ahora se le añada contenido y funcionalidades:
 - Crea un nuevo paquete llamado **media** donde almacenar todas las imágenes *png* o iconos que utilices en la aplicación a partir de ahora.
-- Agrándala y agrégale un gran panel central con un *JTextArea* y otro lateral con los botones. Agrega una barra inferior de estado con funcionalidad. 
+- Agrándala y agrégale un gran panel central con un *JTextArea* y otro lateral con los botones. Agrega una barra inferior de estado para darle funcionalidad y usabilidad. 
 - Agrega un menú superior con las opciones de **archivo** y **edición**:
 	- El menú **archivo** tendrá la opción de abrir y guardar archivos de tipo texto cuyo contenido se cargará en el *JTextArea* central de la ventana principal.
 	- Agrega un **selector de color** a las opciones del menú de edición, cuya función sea cambiar el color de fondo de los *JPanel* y de toda la interfaz.
 ![](media/9cd713b474093125d5571d49cd5b0243.png)
-
 - Mejora el ejercicio anterior permitiendo **mover** todas las ventanas desde su barra superior personalizada.
 
 ## Parte 3
