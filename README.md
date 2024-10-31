@@ -22,7 +22,7 @@ Rediseña la **ventana principal** para que a partir de ahora se le añada conte
 - Agrega un menú superior con las opciones de **archivo** y **edición**:
 	- El menú **archivo** tendrá la opción de abrir y guardar archivos de tipo texto cuyo contenido se cargará en el *JTextArea* central de la ventana principal.
 	- Agrega un **selector de color** a las opciones del menú de edición, cuya función sea cambiar el color de fondo de los *JPanel* y de toda la interfaz.
-![](media/9cd713b474093125d5571d49cd5b0243.png)
+	![](media/9cd713b474093125d5571d49cd5b0243.png)
 - Mejora el ejercicio anterior permitiendo **mover** todas las ventanas desde su barra superior personalizada.
 
 ## Parte 3
@@ -31,11 +31,11 @@ Busca la forma de generar un **ejecutable** para *Windows_64* usando el fichero 
 
 ### Launch4J 
 
-- Descarga e instala Launch4j.
+- Descarga e instala *Launch4j*.
 - Crea un nuevo proyecto en Launch4j y especifica el archivo JAR de tu proyecto en la sección "Jar".
 - Configura los parámetros que necesites, como la versión mínima de Java y el icono del ejecutable.
 - Selecciona el archivo de salida (.exe) y guarda el proyecto.
-- Haz clic en "Build wrapper" para generar el .exe.
+- Haz clic en *Build wrapper* para generar el .exe.
 
 Puede seguir los pasos desde el siguiente tutorial desde [este enlace.](https://www.raulprietofernandez.net/blog/programacion/como-crear-un-instalador-para-aplicaciones-java-con-install4j)
 
@@ -63,7 +63,7 @@ Puede seguir los pasos desde el siguiente tutorial desde [este enlace.](https://
 ```
 
 
-## Otras mejoras opcionales evaluable
+## Mejoras opcionales (evaluable)
 
 Busca la forma de mejorar el selector de color por defecto utilizado, ya sea en repositorios u otras clases en Internet. Haz lo mismo con el selector de ficheros por defecto.
 
