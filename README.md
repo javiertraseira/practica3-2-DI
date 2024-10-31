@@ -4,7 +4,7 @@ Esta práctica sirve como base de varios de los contenidos mínimos que debe cum
 
 ## Parte 1
 
-La práctica consiste en generar una **guía de estilo** rellenando un documento adjunto y seguir algunas de las reglas básicas de **usabilidad** vistas, personalizando y reorganizando el diseño, la barra superior y mediante paneles la aplicación desarrollada previamente:
+La práctica consiste en generar una **guía de estilo** rellenando un documento adjunto y seguir algunas de las reglas básicas de **usabilidad** vistas, personalizando y reorganizando el diseño, la barra superior y mediante paneles la aplicación desarrollada previamente para darle así un aspecto visual más acorde:
 
 -   Se deberá hacer un estudio de la **usabilidad** de la aplicación (especialmente la parte de creación de usuarios nuevos), así como justificar el uso de una *paleta de colores* específica y una *fuente tipográfica*. Rellena el documento de la [guía de estilo](Plantilla_guia_de_estilo.md) adjunto al proyecto.
 -   La **barra superior** de las ventanas deberá de ser sustituida por una barra personalizada creada por nosotros, con su misma funcionalidad (excepto por el momento mover la ventana). Nota: usar para ello la propiedad *undecorated* de un JFrame.
@@ -42,8 +42,9 @@ Puede seguir los pasos desde el siguiente tutorial desde [este enlace.](https://
 
 ### Comando jpackage (Oracle)
 
-- Descarga e instala el comando desde la página de Oracle.
-- Ejecuta el siguiente comando en el terminal:
+- Asegúrate de tener la versión del JDK apropiada instalada. 
+- Asegúrate de tener en la variable PATH la ruta a dicho comando para poder ejecutarlo.
+- Ejecuta el siguiente comando desde la terminal en la carpeta del proyecto donde has generado el fichero JAR:
 `jpackage --input ruta/al/jar --name NombreDeTuApp --main-jar TuArchivo.jar --main-class MainClass`
 
 
