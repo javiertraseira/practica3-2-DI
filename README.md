@@ -44,8 +44,23 @@ Puede seguir los pasos desde el siguiente tutorial desde [este enlace.](https://
 
 - Asegúrate de tener la versión del JDK apropiada instalada. 
 - Asegúrate de tener en la variable PATH la ruta a dicho comando para poder ejecutarlo.
-- Ejecuta el siguiente comando desde la terminal en la carpeta del proyecto donde has generado el fichero JAR:
-`jpackage --input ruta/al/jar --name NombreDeTuApp --main-jar TuArchivo.jar --main-class MainClass`
+- Para ello debes ejecutar el comando jpackage desde la terminal con los siguientes parámetros:
+
+```
+	jpackage ^
+		--type exe ^
+		--input "C:\Proyecto\miAplicacion\libs" ^
+		--dest "C:\Proyecto\miAplicacion\salida" ^
+		--name MiAplicacion ^
+		--main-jar MiAplicacion.jar ^
+		--main-class ejemplo.MainClass ^
+		--icon "C:\Proyecto\miAplicacion\recursos\icono.ico" ^
+		--app-version 1.0.0 ^
+		--vendor "MiEmpresa" ^
+		--description "Aplicación de ejemplo ejecutable para Windows" ^
+		--runtime-image "C:\Proyecto\miAplicacion\runtime" ^
+		--java-options "--enable-preview"
+```
 
 
 ## Otras mejoras opcionales evaluable
