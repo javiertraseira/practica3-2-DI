@@ -4,9 +4,9 @@ Esta práctica sirve como base de varios de los contenidos mínimos que debe cum
 
 ## Parte 1
 
-La práctica consiste en estudiar y crear una **guía de estilo** para tu aplicación desarrollada en la anterior unidad rellenando un documento adjunto, siguiendo algunas de las reglas básicas de **usabilidad** vistas, personalizando y reorganizando el diseño, la barra superior y mediante paneles la aplicación para darle así un aspecto visual más acorde y actual:
+La práctica consiste en estudiar y crear una **guía de estilo** para tu aplicación desarrollada en la anterior unidad rellenando un documento adjunto para seguir algunas de las reglas básicas de **usabilidad** vistas. Deberás de personalizar y reorganizar su diseño, la barra superior y mediante paneles la aplicación para darle así un aspecto visual más acorde y actual:
 
--   Se deberá hacer un estudio de la **usabilidad** de la aplicación (especialmente la parte de creación de usuarios nuevos), así como justificar el uso de una *paleta de colores* específica y su *fuente tipográfica*. Rellena el documento de la [guía de estilo](Plantilla_guia_de_estilo.md) adjunto al proyecto.
+-   Se deberá implementar un diseño basado en la **usabilidad** de la aplicación (especialmente la parte de creación de usuarios nuevos), así como justificar el uso de una *paleta de colores* y una *fuente tipográfica* específica. Rellena el documento de la [guía de estilo](Plantilla_guia_de_estilo.md) adjunto al proyecto.
 -   La **barra superior** de las ventanas deberá de ser sustituida por una barra personalizada creada por nosotros, con su misma funcionalidad (excepto por el momento mover la ventana). Nota: usar para ello la propiedad *undecorated* de un JFrame.
 -   Se deberán de utilizar *JPanels* sobre la ventana y se recomienda utilizar como **layout** el *Free Design* para la ventana superior y el *Null Layout* para el panel principal.
    ![](media/3605716fc96796a96a8819be129560a7.png)
