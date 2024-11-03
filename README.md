@@ -1,6 +1,6 @@
 # Práctica 3.1 Usabilidad básica (guía de estilo) e instalación
 
-Esta práctica sirve como base de varios de los contenidos mínimos que debe cumplir el primer proyecto trimestral evaluable del módulo de Desarrollo de Interfaces.
+Esta práctica sirve como base de varios de los contenidos mínimos que debe cumplir el **primer proyecto trimestral** evaluable del módulo de Desarrollo de Interfaces.
 
 ## Parte 1
 
@@ -21,7 +21,7 @@ Rediseña la **ventana principal** para que a partir de ahora se le añada conte
 	- El menú **archivo** tendrá la opción de abrir y guardar archivos de tipo texto cuyo contenido se cargará en el *JTextArea* central de la ventana principal.
 	- Agrega un **selector de color** a las opciones del menú de edición, cuya función sea cambiar el color de fondo de los *JPanel* y de toda la interfaz.
 		![](media/9cd713b474093125d5571d49cd5b0243.png)
-- Mejora el ejercicio anterior permitiendo **mover** todas las ventanas desde su barra superior personalizada.
+- Mejora el ejercicio anterior permitiendo **mover** todas las ventanas desde su barra superior personalizada mostrando dos botones de acción (minimizar y cerrar)
 
 ## Parte 3
 
