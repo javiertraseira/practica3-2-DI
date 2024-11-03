@@ -40,9 +40,10 @@ Puede seguir los pasos desde el siguiente tutorial desde [este enlace.](https://
 
 ### Comando jpackage (Oracle)
 
-- Asegúrate de tener la versión del JDK apropiada instalada. 
-- Asegúrate de tener en la variable PATH la ruta a dicho comando para poder ejecutarlo.
-- Para ello debes ejecutar el comando jpackage desde la terminal con los siguientes parámetros:
+- Otra opción es utilizar el comando *jpackage* proporcionado en la instalación del jdk.
+- Asegúrate de tener la versión del JDK apropiada instalada y localizada. 
+- Asegúrate de tener en la variable *PATH* la ruta a dicho comando para poder ejecutarlo.
+- Para ello debes ejecutar el comando *jpackage* desde la terminal con los siguientes parámetros:
 
 ```
 	jpackage ^
