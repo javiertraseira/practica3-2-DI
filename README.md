@@ -8,13 +8,13 @@ La práctica consiste en estudiar y crear una **guía de estilo** para tu aplica
 
 -   Se deberá implementar un diseño basado en la **usabilidad** de la aplicación (especialmente la parte de creación de usuarios nuevos), así como justificar el uso de una *paleta de colores* y una *fuente tipográfica* específica. Rellena el documento de la [guía de estilo](Plantilla_guia_de_estilo.md) adjunto al proyecto.
 -   La **barra superior** de las ventanas deberá de ser sustituida por una barra personalizada creada por nosotros, con su misma funcionalidad (excepto por el momento mover la ventana). Nota: usar para ello la propiedad `undecorated` de un JFrame.
--   Se deberán de utilizar *JPanels* sobre la ventana y se recomienda utilizar como **layout** el *Free Design* para la ventana superior y el *Null Layout* para el panel principal.
+-   Se deberán de utilizar *JPanels* sobre la ventana y se recomienda utilizar como **layout** el `Free Design` para la ventana superior y el `null Layout` para el panel principal.
    ![](media/3605716fc96796a96a8819be129560a7.png)
 
 
 ## Parte 2
 
-Rediseña la **ventana principal** para que a partir de ahora se le añada contenido y funcionalidades:
+Rediseña la **ventana principal** para que a partir de ahora se le añada contenido y nuevas funcionalidades:
 - Crea un nuevo paquete llamado **media** donde almacenar todas las imágenes *png* o iconos que utilices en la aplicación a partir de ahora.
 - Agrándala y agrégale un gran panel central con un *JTextArea* y otro lateral con los botones. Agrega una barra inferior de estado para darle funcionalidad y usabilidad. 
 - Agrega un menú superior con las opciones de **archivo** y **edición**:
