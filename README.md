@@ -64,6 +64,8 @@ Puede seguir los pasos desde el siguiente tutorial desde [este enlace.](https://
 
 ## Mejoras opcionales (evaluable)
 
+Agrega otra opción en el menú **edición** para cambiar el tipo de fuente y el tamaño y que afecte a toda la interfaz.
+
 Busca la forma de mejorar el selector de color por defecto utilizado, ya sea en repositorios u otras clases en Internet. Haz lo mismo con el selector de ficheros por defecto.
 
 Investiga la forma de integrar el funcionamiento de la Base de Datos de tu aplicación mediante el instalador.
