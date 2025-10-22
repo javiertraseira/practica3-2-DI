@@ -1,34 +1,38 @@
-# Práctica 3.1 Usabilidad básica (guía de estilo) e instalación
+# Práctica 3.2 Usabilidad básica (guía de estilo) e instalación
 
 La práctica consiste en estudiar y crear una **guía de estilo** para tu aplicación desarrollada en la anterior unidad rellenando un documento adjunto para seguir algunas de las reglas básicas de **usabilidad** vistas. Deberás de personalizar y reorganizar su diseño, la barra superior y mediante paneles las distintas ventanas para darle así un aspecto visual más acorde y actual:
 
 ## Parte 1
 
--   Se deberá implementar un diseño basado en la **usabilidad** de la aplicación (especialmente la parte de creación de usuarios nuevos), así como justificar el uso de una *paleta de colores* y una *fuente tipográfica* específica. Rellena el documento de la [guía de estilo](Plantilla_guia_de_estilo.md) adjunto al proyecto.
+-   Se deberá implementar un diseño basado en la **usabilidad** de la aplicación, así como justificar el uso de una *paleta de colores* y una *fuente tipográfica* específica. 
+	- Rellena el documento de la [guía de estilo](Plantilla_guia_de_estilo.md) adjunto al proyecto.
+	- Crea un icono para la aplicación que se muestre en la ventana.
+	
 
-- Mejorar la pantalla de **nuevo usuario** con los siguientes requerimientos:
+- Mejora la pantalla de **nuevo usuario** con los siguientes requerimientos:
 	- **Validar** también que los campos opcionales no estén vacíos o mal formados antes de continuar.
 	- Agregar un botón para poder tener un **calendario** para seleccionar la fecha de nacimiento. Para ello deberás hacer uso de la librería *jcalendar1.4.jar* (*JDateChooser*)
 	- Añade en la **pantalla principal** otro nuevo botón que permita **modificar la contraseña** del usuario que esté actualmente logueado.
 	- El programa debería verificar la creación de nuevos usuarios para evitar duplicados en la BD.
-	- La configuración de la base de datos deberá de leerse de un fichero `config.properties` en lugar de estar escrita dentro del código.
 
-Ejemplo de fichero `config.propierties`:
-```
-db.url=jdbc:mysql://localhost:3306/usuarios
-db.user=root
-db.password=1234
-```
+- La configuración de la base de datos deberá de leerse de un fichero `config.properties` en lugar de estar escrita dentro del código.
 
-Ayúdate de la clase Propierties para leer ficheros de configuración:
+	Ejemplo de fichero `config.propierties`:
+	```
+	db.url=jdbc:mysql://localhost:3306/usuarios
+	db.user=root
+	db.password=1234
+	```
 
-```java
-Properties propiedades = new Properties();
-propiedades.load(new FileReader("src/main/resources/config_derby.properties"));
-url_bd = propiedades.getProperty("url_bd");
-user = propiedades.getProperty("user");
-pwd = propiedades.getProperty("pwd");    
-```
+	Ayúdate de la clase `Propierties` para leer ficheros de configuración:
+
+	```java
+	Properties propiedades = new Properties();
+	propiedades.load(new FileReader("src/main/resources/config_derby.properties"));
+	url_bd = propiedades.getProperty("url_bd");
+	user = propiedades.getProperty("user");
+	pwd = propiedades.getProperty("pwd");    
+	```
 
 ## Parte 2
 
