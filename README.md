@@ -1,18 +1,17 @@
 # Práctica 3.2 Usabilidad básica (guía de estilo) e instalación
 
-La práctica consiste en estudiar y crear una **guía de estilo** para tu aplicación desarrollada en la anterior unidad rellenando un documento adjunto para seguir algunas de las reglas básicas de **usabilidad** vistas. Deberás de personalizar y reorganizar su diseño, la barra superior y mediante paneles las distintas ventanas para darle así un aspecto visual más acorde y actual:
+La práctica consiste en crear una **guía de estilo** para tu aplicación y rellenanr un documento adjunto para seguir algunas de las reglas básicas de **usabilidad** vistas. Deberás de personalizar y reorganizar su diseño, la barra superior y mediante paneles las distintas ventanas para darle así un aspecto visual más acorde y actual:
 
 ## Parte 1
 
 -   Se deberá implementar un diseño basado en la **usabilidad** de la aplicación, así como justificar el uso de una *paleta de colores* y una *fuente tipográfica* específica. 
 	- Rellena el documento de la [guía de estilo](Plantilla_guia_de_estilo.md) adjunto al proyecto.
-	- Crea un icono para la aplicación que se muestre en la ventana.
+	- Crea un **icono** para la aplicación que se muestre en la ventana.
 	
 
 - Mejora la pantalla de **nuevo usuario** con los siguientes requerimientos:
 	- **Validar** también que los campos opcionales no estén vacíos o mal formados antes de continuar.
 	- Agregar un botón para poder tener un **calendario** para seleccionar la fecha de nacimiento. Para ello deberás hacer uso de la librería *jcalendar1.4.jar* (*JDateChooser*)
-	- Añade en la **pantalla principal** otro nuevo botón que permita **modificar la contraseña** del usuario que esté actualmente logueado.
 	- El programa debería verificar la creación de nuevos usuarios para evitar duplicados en la BD.
 
 - La configuración de la base de datos deberá de leerse de un fichero `config.properties` en lugar de estar escrita dentro del código.
@@ -37,7 +36,8 @@ La práctica consiste en estudiar y crear una **guía de estilo** para tu aplica
 ## Parte 2
 
 Rediseña la **ventana principal** para que a partir de ahora se le añada contenido y nuevas funcionalidades:
-- Agrándala y agrégale un gran panel central con un *JTextArea* y otro lateral con los botones. Agrega una barra inferior de estado para darle funcionalidad y usabilidad. 
+- Agrándala y agrégale un gran panel central con un *JTextArea* y otro lateral con los botones. Agrega una barra inferior de estado para darle funcionalidad y usabilidad.
+- Añade otro nuevo botón que permita **modificar la contraseña** del usuario que esté actualmente logueado. 
 - Agrega un menú superior con las opciones de **archivo** y **edición**:
 	- El menú **archivo** tendrá la opción de abrir y guardar archivos de tipo texto cuyo contenido se cargará en el *JTextArea* central de la ventana principal.
 	- Agrega un **selector de color** a las opciones del menú de edición, cuya función sea cambiar el color de fondo de los *JPanel* y de toda la interfaz.
@@ -58,29 +58,6 @@ Busca la forma de generar un **ejecutable** para *Windows_64* usando el fichero 
 
 Puede seguir los pasos desde el siguiente tutorial desde [este enlace.](https://www.raulprietofernandez.net/blog/programacion/como-crear-un-instalador-para-aplicaciones-java-con-install4j)
 
-
-### Comando jpackage (Oracle)
-
-- Otra opción es utilizar el comando *jpackage* proporcionado en la instalación del jdk.
-- Asegúrate de tener la versión del JDK apropiada instalada y localizada. 
-- Asegúrate de tener en la variable *PATH* la ruta a dicho comando para poder ejecutarlo.
-- Para ello debes ejecutar el comando *jpackage* desde la terminal con los siguientes parámetros:
-
-```
-	jpackage ^
-		--type exe ^
-		--input "C:\Proyecto\miAplicacion\libs" ^
-		--dest "C:\Proyecto\miAplicacion\salida" ^
-		--name MiAplicacion ^
-		--main-jar MiAplicacion.jar ^
-		--main-class ejemplo.MainClass ^
-		--icon "C:\Proyecto\miAplicacion\recursos\icono.ico" ^
-		--app-version 1.0.0 ^
-		--vendor "MiEmpresa" ^
-		--description "Aplicación de ejemplo ejecutable para Windows" ^
-		--runtime-image "C:\Proyecto\miAplicacion\runtime" ^
-		--java-options "--enable-preview"
-```
 
 
 ## Mejoras opcionales (evaluable)
