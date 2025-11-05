@@ -11,7 +11,8 @@ La práctica consiste en crear una **guía de estilo** para tu aplicación y rel
 
 - Mejora la pantalla de **nuevo usuario** con los siguientes requerimientos:
 	- **Validar** también que los campos opcionales no estén vacíos o mal formados antes de continuar.
-	- Mejorar la usabilidad agregando un botón para poder tener un **calendario** visual para seleccionar la fecha de nacimiento. Para ello deberás de agregar la librería *JCalendar* al `pom.xml` para usar el elemento *JDateChooser()* en el selector de fecha. Adicionalmente, para que aparezca en el editor de Apache Netbeans has de agregar el complemento en formato *JAR*, previamente descargado a una carpeta del proyecto, a la paleta del diseñador.
+	- Mejorar la **usabilidad** agregando un botón para poder tener un **calendario** visual para seleccionar la fecha de nacimiento. 
+		- Para ello deberás de agregar la librería *JCalendar* al `pom.xml` para usar el elemento *JDateChooser()* en el selector de fecha. Adicionalmente, para que aparezca en el editor de Apache Netbeans has de agregar el complemento en formato *JAR*, previamente descargado a una carpeta del proyecto, a la paleta del diseñador.
 
 - La configuración de la base de datos deberá de leerse de un fichero `config.properties` en lugar de estar escrita dentro del código.
 
