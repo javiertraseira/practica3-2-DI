@@ -11,8 +11,7 @@ La práctica consiste en crear una **guía de estilo** para tu aplicación y rel
 
 - Mejora la pantalla de **nuevo usuario** con los siguientes requerimientos:
 	- **Validar** también que los campos opcionales no estén vacíos o mal formados antes de continuar.
-	- Agregar un botón para poder tener un **calendario** para seleccionar la fecha de nacimiento. Para ello deberás hacer uso de la librería *jcalendar1.4.jar* (*JDateChooser*)
-	- El programa debería verificar la creación de nuevos usuarios para evitar duplicados en la BD.
+	- Agregar un botón para poder tener un **calendario** para seleccionar la fecha de nacimiento. Para ello deberás de agregar la librería *JCalendar* al `pom.xml` para usar el elemento *JDateChooser()* en el selector de fecha.
 
 - La configuración de la base de datos deberá de leerse de un fichero `config.properties` en lugar de estar escrita dentro del código.
 
@@ -57,7 +56,6 @@ Busca la forma de generar un **ejecutable** para *Windows_64* usando el fichero 
 - Haz clic en *Build wrapper* para generar el .exe.
 
 Puede seguir los pasos desde el siguiente tutorial desde [este enlace.](https://www.raulprietofernandez.net/blog/programacion/como-crear-un-instalador-para-aplicaciones-java-con-install4j)
-
 
 
 ## Mejoras opcionales (evaluable)
