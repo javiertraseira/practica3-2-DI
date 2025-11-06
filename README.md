@@ -4,7 +4,7 @@ La práctica consiste en crear una **guía de estilo** para tu aplicación y rel
 
 ## Parte 1
 
--   Se deberá implementar un diseño basado en la **usabilidad** de la aplicación, así como justificar el uso de una *paleta de colores* y una *fuente tipográfica* específica. 
+-   Se deberá implementar un diseño basado en la **usabilidad** de la aplicación, así como justificar el uso de una *paleta de colores* y una *fuente tipográfica* por defecto específica. 
 	- Rellena el documento de la [guía de estilo](Plantilla_guia_de_estilo.md) adjunto al proyecto.
 	- Crea un **icono** para la aplicación que se muestre en la ventana.
 	
@@ -36,17 +36,22 @@ La práctica consiste en crear una **guía de estilo** para tu aplicación y rel
 ## Parte 2
 
 Rediseña la **ventana principal** para que a partir de ahora se le añada contenido y nuevas funcionalidades:
-- Agrándala y agrégale un gran panel central con un *JTextArea* y otro lateral con los botones. Agrega una barra inferior de estado para darle funcionalidad y usabilidad.
+- Agrándala y agrégale un gran panel central con un *JTextArea* y otro lateral con los botones. 
+- Agrega una **barra superior** con accesos directos y otra inferior para darle funcionalidad y usabilidad.
 - Añade otro nuevo botón que permita **modificar la contraseña** del usuario que esté actualmente logueado. 
 - Agrega un menú superior con las opciones de **archivo** y **edición**:
 	- El menú **archivo** tendrá la opción de abrir y guardar archivos de tipo texto cuyo contenido se cargará en el *JTextArea* central de la ventana principal.
-	- Agrega un **selector de color** a las opciones del menú de edición, cuya función sea cambiar el color de fondo de los *JPanel* y de toda la interfaz.
+	- Agrega un **selector de color** a las opciones del menú de edición, cuya función sea cambiar el color de los botones de la interfaz y variar entre modo oscuro y modo claro.
 		![](media/9cd713b474093125d5571d49cd5b0243.png)
-- Mejora el ejercicio anterior permitiendo **mover** todas las ventanas desde su barra superior personalizada mostrando dos botones de acción (minimizar y cerrar)
+	- Agrega un **selector de fuentes** que permita cambiar de fuente y seleccionar su tamaño.
+
 
 ## Parte 3
 
-Busca la forma de generar un **ejecutable** para *Windows_64* usando el fichero **jar** generado de tu proyecto usando la aplicación *Launch4J* o mediante el comando `jpackage` de Oracle. No te olvides de agregarle un **icono** propio a tu aplicación.
+
+- Crea una **prueba automizada** a cualquier parte de la interfaz y documéntala.
+
+- Busca la forma de generar un **ejecutable** para *Windows_64* usando el fichero **jar** generado de tu proyecto usando la aplicación *Launch4J* o mediante el comando `jpackage` de Oracle. 
 
 ### Launch4J 
 
