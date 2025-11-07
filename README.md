@@ -2,8 +2,8 @@
 
 Esta práctica forma parte del **proyecto evaluable del trimestre**, integrando aspectos de diseño, programación, pruebas y despliegue de aplicaciones de escritorio, por lo que su correcta realización y documentación serán fundamentales para la valoración final del módulo.
 
-Esta práctica tiene como objetivo aplicar los principios fundamentales de **diseño de interfaces gráficas** y **usabilidad** en una aplicación Java desarrollada con Swing. Se deberá diseñar una **guía de estilo** personalizada que defina la paleta de colores, tipografía y elementos visuales coherentes con la identidad de su proyecto, además de implementar mejoras visuales y funcionales que favorezcan la experiencia del usuario.
-Asimismo, se trabajará la configuración de la aplicación mediante ficheros externos, el uso de componentes visuales avanzados como JCalendar o JTabbedPane, la incorporación de temas visuales dinámicos (modo claro/oscuro) y la creación de un ejecutable funcional (.exe) para Windows. 
+Su objetivo es aplicar los principios fundamentales de **diseño de interfaces gráficas** y **usabilidad** en una aplicación Java desarrollada con Swing. Se deberá diseñar y **documentar** una **guía de estilo** personalizada que defina la paleta de colores, tipografía y elementos visuales coherentes con la identidad de su proyecto, además de implementar mejoras visuales y funcionales que favorezcan la experiencia del usuario.
+Asimismo, se trabajará la configuración de la aplicación mediante un fichero externo, el uso de componentes visuales avanzados como *JCalendar* o *JTabbedPane*, la incorporación de temas visuales (modo claro/oscuro), tipografía dinámica y la creación de un **ejecutable** funcional (.exe) para Windows. 
 
 
 ## Parte 1
@@ -14,13 +14,13 @@ Asimismo, se trabajará la configuración de la aplicación mediante ficheros ex
 	
 
 - Mejora la pantalla de **nuevo usuario** con los siguientes requerimientos:
-	- **Validar** también que los campos opcionales no estén vacíos o mal formados antes de continuar.
-	- Mejorar la **usabilidad** agregando un botón para poder tener un **calendario** visual para seleccionar la fecha de nacimiento. 
-		- Para ello deberás de agregar la librería *JCalendar* al `pom.xml` para usar el elemento *JDateChooser()* en el selector de fecha. Adicionalmente, para que aparezca en el editor de Apache Netbeans has de agregar el complemento en formato *JAR*, previamente descargado a una carpeta del proyecto, a la paleta del diseñador.
+	- **Valida** que los campos opcionales no estén vacíos o mal formados antes de continuar.
+	- Mejora la **usabilidad** agregando un botón para poder tener un **calendario** visual para seleccionar la fecha de nacimiento. 
+		- Para ello deberás de agregar la librería *JCalendar* al `pom.xml` para usar el elemento *JDateChooser()* en el selector de fecha. Adicionalmente, para que aparezca en el editor de Apache Netbeans se puede agregar el complemento en formato *JAR*, previamente descargado a una carpeta del proyecto, a la paleta del diseñador.
 
-- La configuración de la base de datos deberá de leerse de un fichero `config.properties` en lugar de estar escrita dentro del código.
+- La configuración de la base de datos deberá de leerse de un fichero `config.properties` en lugar de estar escrita en el código.
 
-	Ejemplo de fichero `config.propierties`:
+	Ejemplo de fichero `config.properties`:
 	```
 	db.url=jdbc:mysql://localhost:3306/usuarios
 	db.user=root
@@ -39,27 +39,26 @@ Asimismo, se trabajará la configuración de la aplicación mediante ficheros ex
 
 ## Parte 2
 
-Rediseña la **ventana principal** para que a partir de ahora se le añada contenido y nuevas funcionalidades:
-- Agrándala y agrégale un gran panel central con un *JTextArea* y otro lateral con los botones. 
-- Agrándala agrégale un gran *JTabbedPane* con al menos dos pestañas en el panel principal:
-	- Una pestaña para mostrar el campo de contenido del fichero de texto. Agrega la opción para poder editar su contenido y también poder guardar los cambios desde el menú archivo.
-	- Añade otra pestaña que muestre un *JTable* que sea el resultado de consultar el contenido de los usuarios dados de alta actualmente en el sistema, mostrando todos sus campos en diferentes columnas.
+Rediseña la **ventana principal** para incorporar nuevas funcionalidades y una disposición más clara:
+
+- Agrándala y añade un **panel central** con un *JTextArea* y un **panel lateral** con los botones principales.
+- Agrega un  *JTabbedPane* con al menos dos pestañas en el panel principal:
+	- Una pestaña para mostrar el campo de contenido del **fichero de texto**. Agrega la opción para poder editar su contenido y también poder guardar los cambios desde el menú archivo.
+	- Otra pestaña que muestre un *JTable* que sea el resultado de consultar el contenido de los usuarios dados de alta actualmente en el sistema (base de datos de usuarios), mostrando todos sus campos en diferentes columnas.
 - Añade otro nuevo botón que permita **modificar la contraseña** del usuario que esté actualmente logueado. 	
 
 	![](media/840647d950380324a5c3ae3b8fdee5f3.png)
 
 
 - Agrega un menú superior con las opciones de **archivo** y **edición**:
-	- El menú **archivo** tendrá la opción de abrir y guardar archivos de tipo texto cuyo contenido se cargará en el *JTextArea* central de la ventana principal.
+	- El menú **archivo** tendrá la opción de abrir y guardar archivos de tipo texto, cuyo contenido se cargará en el *JTextArea* central de la ventana principal.
 	- Agrega un **selector de fuentes** a las opciones del menú de *edición*, que permita cambiar de fuente y seleccionar su tamaño en toda la interfaz.
 		![](media/7657564353233421efg3.png)
-	- Agrega un **selector de color** a las opciones del menú de *edición*, cuya función sea cambiar el color de los botones de la interfaz y variar entre modo oscuro y modo claro en toda la interfaz.
-		![](media/9cd713b474093125d5571d49cd5b0243.png)		
 
 
 ## Parte 3
 
-- Agrega una **barra superior** con accesos directos para abrir un fichero, guardarlo, copiar y pegar. Agrega otra barra inferior para darle funcionalidad y usabilidad.
+- Agrega una **barra de herramientas** superior (*JToolBar*) con accesos directos para *abrir*, *guardar*, *copiar texto* y *pegar texto*. Agrega otra barra inferior para darle funcionalidad y usabilidad y un *menú contextual* en el JTextArea con dichas opciones.
 
 	![](media/840647d950380324a5c3ae3b8fdee5f4.png)
 
@@ -76,11 +75,11 @@ Rediseña la **ventana principal** para que a partir de ahora se le añada conte
 
 ## Parte 4
 
-- Agrega una opción en el menú **edición** para modificar el **tipo de fuente** y el **tamaño** y que afecte a toda la interfaz.
+- Agrega otra nueva opción en el menú **edición** denominada **modificar color** desde donde uses un selector de color para modificar el color de diferentes elementos de la interfaz desde donde también puedas cambiar entre el tema claro y el oscuro para toda la interfaz.
+		![](media/9cd713b474093125d5571d49cd5b0243.png)		
 
-- Agrega una opción en el menú **edición** denominada **modificar color** desde donde uses un selector de color para modificar el color de diferentes elementos de la interfaz desde donde también puedas cambiar entre el tema claro y el oscuro para toda la interfaz.
 
-- Crea una **prueba automizada** a cualquier parte de la interfaz y documéntala.
+- Crea una **prueba automatizada** mediante *AssertJ*, como la que se planteó en prácticas previas, a cualquier parte de la interfaz y documéntala.
 
 
 ## Pruebas (testing)
