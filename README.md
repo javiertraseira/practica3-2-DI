@@ -64,9 +64,11 @@ Rediseña la **ventana principal** para incorporar nuevas funcionalidades y una 
 
 	![](media/840647d950380324a5c3ae3b8fdee5f4.png)
 
-- Busca la forma de generar un **ejecutable** para *Windows_64* usando el fichero **jar** generado de tu proyecto usando la aplicación *Launch4J* o mediante el comando `jpackage` de Oracle. 
+- Busca la forma de generar un fichero **ejecutable** nativo a partir del fichero **jar** funcional de tu proyecto:
+	- En Windows (64 bits), podrás hacerlo mediante la aplicación *Launch4J* o utilizando el comando `jpackage` de Oracle.
+	- En Linux, utiliza `jpackage` para generar un paquete instalable (por ejemplo, .deb, .rpm o un ejecutable tipo app-image).
 
-### Launch4J 
+### Uso Launch4J (Windows)
 
 - Descarga e instala *Launch4j*.
 - Crea un nuevo proyecto en Launch4j y especifica el archivo JAR de tu proyecto en la sección "Jar".
