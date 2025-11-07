@@ -1,4 +1,4 @@
-# Práctica 3.2 - Proyecto de diseño, usabilidad y despliegue de una aplicación 
+# Práctica 3.2 - Proyecto de diseño, usabilidad, documentación y despliegue de una aplicación 
 
 Esta práctica forma parte del **proyecto evaluable del trimestre**, integrando aspectos de diseño, programación, pruebas y despliegue de aplicaciones de escritorio, por lo que su correcta realización y documentación serán fundamentales para la valoración final del módulo.
 
