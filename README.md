@@ -58,7 +58,7 @@ Rediseña la **ventana principal** para incorporar nuevas funcionalidades y una 
 
 ## Parte 3
 
-- Agrega una **barra de herramientas** superior (*JToolBar*) con accesos directos para *abrir*, *guardar*, *copiar texto* y *pegar texto*. Agrega otra barra inferior para darle funcionalidad y usabilidad y un *menú contextual* en el JTextArea con dichas opciones.
+- Agrega una **barra de herramientas** superior (*JToolBar*) con accesos directos para *abrir*, *guardar*, *copiar texto* y *pegar texto*. Agrega otra barra inferior para darle funcionalidad y un *menú contextual* en el *JTextArea* que se muestre al hacer clic con el botón derecho del ratón (con opciones de copiar, pegar y seleccionar todo)
 
 	![](media/840647d950380324a5c3ae3b8fdee5f4.png)
 
@@ -100,8 +100,9 @@ Rediseña la **ventana principal** para incorporar nuevas funcionalidades y una 
 | 12 | Cambio de **modo claro/oscuro** en la interfaz usando FlatLaf                                                      | Activación del conmutador (toggle) o menú                           | Se actualiza el tema completo sin necesidad de reiniciar la aplicación                           |
 | 13 | Funcionalidad del menú **Edición → Selector de fuente y tamaño**                                                   | Selección de fuente y tamaño                                        | Todos los componentes actualizan su fuente y tamaño según la selección                           |
 | 14 | **Barra de herramientas superior e inferior** con accesos directos (abrir, guardar, copiar, pegar)                 | Clic en los iconos                                                  | Las acciones se ejecutan igual que desde el menú                                                 |
-| 15 | Generación de un **ejecutable .exe** con Launch4J o `jpackage`                                                     | Archivo `.jar` del proyecto                                         | Ejecutable `.exe` generado con icono y dependencias correctas                                    |
-| 16 | Verificación de la **estructura del proyecto MVC**                                                                 | Organización de clases en paquetes `modelo`, `vista`, `controlador` | Estructura de archivos conforme al patrón MVC                                                    |
-| 16 | **Evitar duplicados** en el registro de nuevos usuarios                                                            | Registro de un nombre de usuario existente                          | Se muestra mensaje de error y no se guarda el duplicado                                          |
-| 17 | **Prueba automatizada** documentada de alguna parte de la interfaz                                                 | Ejecución de prueba (JUnit o similar)                               | Resultado de la prueba documentado (OK o fallo justificado)                                      |
+| 15 | Implementación de un **menú contextual** en el *JTextArea* accesible con el botón derecho del ratón | Clic derecho sobre el `JTextArea` | Se muestra un menú contextual con opciones (copiar, cortar, pegar, seleccionar todo) que funcionan correctamente |
+| 16 | Generación de un **ejecutable .exe** con Launch4J o `jpackage`                                                     | Archivo `.jar` del proyecto                                         | Ejecutable `.exe` generado con icono y dependencias correctas                                    |
+| 17 | Verificación de la **estructura del proyecto MVC**                                                                 | Organización de clases en paquetes `modelo`, `vista`, `controlador` | Estructura de archivos conforme al patrón MVC                                                    |
+| 18 | **Evitar duplicados** en el registro de nuevos usuarios                                                            | Registro de un nombre de usuario existente                          | Se muestra mensaje de error y no se guarda el duplicado                                          |
+| 19 | **Prueba automatizada** documentada de alguna parte de la interfaz                                                 | Ejecución de prueba (JUnit o similar)                               | Resultado de la prueba documentado (OK o fallo justificado)                                      |
 
