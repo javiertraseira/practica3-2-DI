@@ -47,12 +47,13 @@ Rediseña la **ventana principal** para incorporar nuevas funcionalidades y una 
 	- Otra pestaña que muestre un *JTable* que sea el resultado de consultar el contenido de los usuarios dados de alta actualmente en el sistema (base de datos de usuarios), mostrando todos sus campos en diferentes columnas.
 - Añade otro nuevo botón que permita **modificar la contraseña** del usuario que esté actualmente logueado. 	
 
-	![](media/840647d950380324a5c3ae3b8fdee5f3.png)
-
 
 - Agrega un menú superior con las opciones de **archivo** y **edición**:
 	- El menú **archivo** tendrá la opción de abrir y guardar archivos de tipo texto, cuyo contenido se cargará en el *JTextArea* central de la ventana principal.
-	- Agrega un **selector de fuentes** a las opciones del menú de *edición*, que permita cambiar de fuente y seleccionar su tamaño en toda la interfaz.
+
+	![](media/840647d950380324a5c3ae3b8fdee5f3.png)
+
+	- Agrega un **selector de fuentes** a las opciones del menú de *edición*, que permita cambiar de fuente y seleccionar su tamaño para aplicar en toda la interfaz.
 
 	![](media/7657564353233421efg3.png)
 
