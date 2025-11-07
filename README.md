@@ -1,11 +1,15 @@
 # Práctica 3.2 Usabilidad básica (guía de estilo) e instalación
 
-La práctica consiste en crear una **guía de estilo** para tu aplicación y rellenanr un documento adjunto para seguir algunas de las reglas básicas de **usabilidad** vistas. Deberás de personalizar y reorganizar su diseño, la barra superior y mediante paneles las distintas ventanas para darle así un aspecto visual más acorde y actual:
+Esta práctica forma parte del **proyecto evaluable del trimestre**, integrando aspectos de diseño, programación, pruebas y despliegue de aplicaciones de escritorio, por lo que su correcta realización y documentación serán fundamentales para la valoración final del módulo.
+
+Esta práctica tiene como objetivo aplicar los principios fundamentales de **diseño de interfaces gráficas** y **usabilidad** en una aplicación Java desarrollada con Swing. Se deberá diseñar una **guía de estilo** personalizada que defina la paleta de colores, tipografía y elementos visuales coherentes con la identidad de su proyecto, además de implementar mejoras visuales y funcionales que favorezcan la experiencia del usuario.
+Asimismo, se trabajará la configuración de la aplicación mediante ficheros externos, el uso de componentes visuales avanzados como JCalendar o JTabbedPane, la incorporación de temas visuales dinámicos (modo claro/oscuro) y la creación de un ejecutable funcional (.exe) para Windows. 
+
 
 ## Parte 1
 
 -   Se deberá implementar un diseño basado en la **usabilidad** de la aplicación, así como justificar el uso de una *paleta de colores* y una *fuente tipográfica* por defecto específica. 
-	- Rellena el documento de la [guía de estilo](Plantilla_guia_de_estilo.md) adjunto al proyecto.
+	- Rellena el documento de la [guía de estilo](Plantilla_guia_de_estilo.md) adjunto al proyecto. Se considerará como el apartado de **documentación** obligatoria del proyecto.
 	- Crea un **icono** para la aplicación que se muestre en la ventana.
 	
 
@@ -40,7 +44,11 @@ Rediseña la **ventana principal** para que a partir de ahora se le añada conte
 - Agrándala agrégale un gran *JTabbedPane* con al menos dos pestañas en el panel principal:
 	- Una pestaña para mostrar el campo de contenido del fichero de texto. Agrega la opción para poder editar su contenido y también poder guardar los cambios desde el menú archivo.
 	- Añade otra pestaña que muestre un *JTable* que sea el resultado de consultar el contenido de los usuarios dados de alta actualmente en el sistema, mostrando todos sus campos en diferentes columnas.
-- Añade otro nuevo botón que permita **modificar la contraseña** del usuario que esté actualmente logueado. 
+- Añade otro nuevo botón que permita **modificar la contraseña** del usuario que esté actualmente logueado. 	
+
+	![](media/840647d950380324a5c3ae3b8fdee5f3.png)
+
+
 - Agrega un menú superior con las opciones de **archivo** y **edición**:
 	- El menú **archivo** tendrá la opción de abrir y guardar archivos de tipo texto cuyo contenido se cargará en el *JTextArea* central de la ventana principal.
 	- Agrega un **selector de color** a las opciones del menú de edición, cuya función sea cambiar el color de los botones de la interfaz y variar entre modo oscuro y modo claro.
@@ -50,9 +58,10 @@ Rediseña la **ventana principal** para que a partir de ahora se le añada conte
 
 ## Parte 3
 
-- Agrega una **barra superior** con accesos directos y otra inferior para darle funcionalidad y usabilidad.
+- Agrega una **barra superior** con accesos directos para abrir un fichero, guardarlo, copiar y pegar. Agrega otra barra inferior para darle funcionalidad y usabilidad.
 
-- Crea una **prueba automizada** a cualquier parte de la interfaz y documéntala.
+	![](media/840647d950380324a5c3ae3b8fdee5f4.png)
+
 
 - Busca la forma de generar un **ejecutable** para *Windows_64* usando el fichero **jar** generado de tu proyecto usando la aplicación *Launch4J* o mediante el comando `jpackage` de Oracle. 
 
@@ -67,34 +76,35 @@ Rediseña la **ventana principal** para que a partir de ahora se le añada conte
 Puede seguir los pasos desde el siguiente tutorial desde [este enlace.](https://www.raulprietofernandez.net/blog/programacion/como-crear-un-instalador-para-aplicaciones-java-con-install4j)
 
 
-## Mejoras opcionales (evaluable)
+## Parte 4
 
-Agrega otra opción en el menú **edición** para cambiar el tipo de fuente y el tamaño y que afecte a toda la interfaz.
+- Agrega una opción en el menú **edición** para modificar el **tipo de fuente** y el **tamaño** y que afecte a toda la interfaz.
 
-Busca la forma de mejorar el selector de color por defecto utilizado, ya sea en repositorios u otras clases en Internet. Haz lo mismo con el selector de ficheros por defecto.
+- Agrega una opción en el menú **edición** denominada **modificar color** desde donde uses un selector de color para modificar el color de diferentes elementos de la interfaz desde donde también puedas cambiar entre el tema claro y el oscuro para toda la interfaz.
 
-Investiga la forma de integrar el funcionamiento de la Base de Datos de tu aplicación mediante el instalador.
+- Crea una **prueba automizada** a cualquier parte de la interfaz y documéntala.
+
 
 ## Pruebas (testing)
 
-| ID Caso Prueba | Descripción Caso de Prueba                                                                                               | Entrada esperada                                                                          | Salida esperada                                                                                      |
-|----------------|--------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| 01             | Verificación de la paleta de colores y la fuente tipográfica aplicadas en la interfaz                                     | Colores y tipografía predefinidos en la guía de estilo                                     | Colores y fuente aplicados correctamente en todos los componentes                                      |
-| 02             | Sustitución de la barra superior por una barra personalizada                                                             | Uso de `JFrame.setUndecorated(true)`                                                      | La barra superior personalizada aparece correctamente                                                 |
-| 03             | Validaciones de los campos opcionales de la ventana nuevo usuario               | Texto de los diferentes campos     | Si falta texto en alguno de los campos obligatorios no podrá continuar                  | OK/No cumple|
-| 04             | Verificación del aumento de tamaño de la ventana principal con panel central y lateral                                   | Tamaño de ventana agrandado y paneles agregados                                            | Ventana principal correctamente redimensionada con los paneles añadidos                                |
-| 05             | Añadir menú superior con opciones de "Archivo" y "Edición"                                                               | Menú añadido con opciones                                                                  | El menú superior con las opciones se muestra correctamente                                             |
-| 06             | Funcionalidad para abrir y guardar archivos de texto desde el menú "Archivo"                                              | Archivo de texto seleccionado                                                             | Contenido del archivo cargado o guardado en el `JTextArea`                                              |
-| 07             | Verificación de funcionalidad del selector de color en el menú "Edición"                                                  | Selección de un color en el selector                                                      | Color de fondo del `JPanel` y de toda la interfaz cambiado correctamente                                    |
-| 08             | Mover las ventanas desde la barra superior personalizada                                                                 | Intento de mover la ventana desde la barra personalizada                                   | La ventana se puede mover desde la barra superior personalizada y funcionan sus acciones cerrar y mininizar                                       |
-| 09             | Generación de un ejecutable de Windows_64 con `Launch4J` o `jpackage`                                                      | Archivo `jar` del proyecto                                                                 | Ejecutable `.exe` generado correctamente con un icono asociado                                                              |
-| 10             | Se adjunta el documento de plantilla de estilo correctamente cumplimentado                                                                                  |   `Plantilla_guia_de_estilo.md`                         | Se modifica y adjunta la nueva guía de estilo que se corresponde con la aplicación                                      |
-| 11             | Validaciones de los campos opcionales de la ventana nuevo usuario               | Texto de los diferentes campos     | Si falta texto en alguno de los campos obligatorios no podrá continuar                  | OK/No cumple|
-| 12             | Agregar un componente de calendario a través de una librería JAR         | N/D     | Se muestra un calendario al hacer clic en su icono                      | OK/No cumple|
-| 13             | Mejora del selector de color predeterminado                                                                              | Uso de un selector de color personalizado                                                  | El nuevo selector de color reemplaza el predeterminado y ofrece más opciones                           |
-| 14             | Mejora del selector de archivos predeterminado                                                                           | Uso de un selector de archivos personalizado                                               | El nuevo selector de archivos reemplaza el predeterminado y ofrece más funcionalidad                   |
-| 15             | Integración de la Base de Datos en el instalador                                                                         | Configuración del instalador con los parámetros de la base de datos                        | La base de datos se integra y configura automáticamente durante la instalación                         |
-| 16             | Estructura del proyecto                        | N/D   | Se utiliza la división por paquetes MVC; VistaControlador y Modelo para organizar las clases usando el modelo de objetos de forma apropiada | OK/No cumple|
-| 17             | Comprobación fichero jar                        | Proyecto a empaquetar   | Se genera y prueba el fichero jar empaquetado | OK/No cumple|
-| 18             | Verificación de duplicados en la BD                          | Agregar un nuevo usuario   | Se verifica que el nombre de usuario no exista ya en la BD | OK/No cumple|
-| 19             | Leer datos de la BD de un fichero llamado `config.properties`                          | N/D   | Se leen los datos de conexión de la BD de dicho fichero y no del código fuente | OK/No cumple|
+| ID     | Descripción del caso de prueba                                                                                     | Entrada esperada                                                    | Salida esperada                                                                                  |
+| ------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| 01 | **Entrega y documentación** de la guía de estilo                                                                   | Archivo `Plantilla_guia_de_estilo.md` actualizado                   | Documento completo, coherente con la aplicación final                                            |
+| 02 | Verificación de la **paleta de colores** y **fuente tipográfica** aplicadas en la interfaz según la guía de estilo | Colores y tipografía definidos en `Plantilla_guia_de_estilo.md`     | Todos los componentes muestran correctamente la paleta y fuente seleccionadas                    |
+| 03 | Validación de **campos obligatorios y opcionales** en la ventana “Nuevo Usuario”                                   | Datos incompletos o mal formados en campos de texto                 | El sistema muestra mensajes de error y no permite continuar hasta corregir los datos             |
+| 04 | Integración del **calendario visual (JDateChooser)** para seleccionar fecha de nacimiento                          | Clic en el icono del calendario                                     | El componente muestra un selector de fecha funcional                                             |
+| 05 | Lectura de configuración de BD desde `config.properties`                                                           | Archivo `src/main/resources/config.properties` con datos válidos    | Conexión a BD exitosa sin credenciales codificadas en el código fuente                           |
+| 06 | Verificación del **rediseño de la ventana principal** con panel central y lateral                                  | Ventana ampliada con paneles agregados                              | Estructura de paneles correcta y ajustada al nuevo tamaño                                        |
+| 07 | **Modificar contraseña** del usuario logueado desde la ventana principal                                           | Usuario logueado y nueva contraseña válida                          | Contraseña actualizada correctamente en la base de datos                                         |
+| 08 | Creación de un **JTabbedPane** con pestañas “Contenido” (JTextArea editable) y “Usuarios” (JTable)                 | Interacción con las pestañas                                        | Las pestañas muestran el contenido esperado y permiten edición o visualización según corresponda |
+| 09 | Consulta de **usuarios activos** en la base de datos y visualización en JTable                                     | Usuarios existentes en BD                                           | Los datos se muestran correctamente con todas las columnas                                       |
+| 10 | Funcionalidad del menú **Archivo → Abrir/Guardar** archivos de texto                                               | Selección de un archivo de texto                                    | El contenido se carga en el `JTextArea` o se guarda correctamente                                |
+| 11 | Funcionalidad del menú **Edición → Selector de color**                                                             | Selección de un color                                               | El color de fondo o los botones de la interfaz se actualizan dinámicamente                       |
+| 12 | Cambio de **modo claro/oscuro** en la interfaz usando FlatLaf                                                      | Activación del conmutador (toggle) o menú                           | Se actualiza el tema completo sin necesidad de reiniciar la aplicación                           |
+| 13 | Funcionalidad del menú **Edición → Selector de fuente y tamaño**                                                   | Selección de fuente y tamaño                                        | Todos los componentes actualizan su fuente y tamaño según la selección                           |
+| 14 | **Barra de herramientas superior e inferior** con accesos directos (abrir, guardar, copiar, pegar)                 | Clic en los iconos                                                  | Las acciones se ejecutan igual que desde el menú                                                 |
+| 15 | Generación de un **ejecutable .exe** con Launch4J o `jpackage`                                                     | Archivo `.jar` del proyecto                                         | Ejecutable `.exe` generado con icono y dependencias correctas                                    |
+| 16 | Verificación de la **estructura del proyecto MVC**                                                                 | Organización de clases en paquetes `modelo`, `vista`, `controlador` | Estructura de archivos conforme al patrón MVC                                                    |
+| 16 | **Evitar duplicados** en el registro de nuevos usuarios                                                            | Registro de un nombre de usuario existente                          | Se muestra mensaje de error y no se guarda el duplicado                                          |
+| 17 | **Prueba automatizada** documentada de alguna parte de la interfaz                                                 | Ejecución de prueba (JUnit o similar)                               | Resultado de la prueba documentado (OK o fallo justificado)                                      |
+
