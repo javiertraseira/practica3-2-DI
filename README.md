@@ -27,7 +27,7 @@ Asimismo, se trabajará la configuración de la aplicación mediante un fichero 
 	db.password=1234
 	```
 
-	Ayúdate de la clase `Propierties` para leer ficheros de configuración:
+	Ayúdate de la clase `Properties` para leer ficheros de configuración:
 
 	```java
 	Properties propiedades = new Properties();
@@ -58,7 +58,7 @@ Rediseña la **ventana principal** para incorporar nuevas funcionalidades y una 
 
 ## Parte 3
 
-- Agrega una **barra de herramientas** superior (*JToolBar*) con accesos directos para *abrir*, *guardar*, *copiar texto* y *pegar texto*. Agrega otra barra inferior para darle funcionalidad y un *menú contextual* en el *JTextArea* que se muestre al hacer clic con el botón derecho del ratón (con opciones de copiar, pegar y seleccionar todo)
+- Agrega una **barra de herramientas** superior (*JToolBar*) con accesos directos para *abrir*, *guardar*, *copiar texto* y *pegar texto*. Agrega otra barra inferior para darle funcionalidad y un *menú contextual* de tipo *Popup Menu* en el *JTextArea* que se muestre al hacer clic con el botón derecho del ratón (con al menos las opciones de copiar, pegar y seleccionar todo)
 
 	![](media/840647d950380324a5c3ae3b8fdee5f4.png)
 
