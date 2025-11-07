@@ -42,7 +42,7 @@ Asimismo, se trabajará la configuración de la aplicación mediante un fichero 
 Rediseña la **ventana principal** para incorporar nuevas funcionalidades y una disposición más clara:
 
 - Agrándala y añade un **panel central** con un *JTextArea* y un **panel lateral** con los botones principales.
-- Agrega un  *JTabbedPane* con al menos dos pestañas en el panel principal:
+- Agrega un *JTabbedPane* con al menos dos pestañas en el panel principal:
 	- Una pestaña para mostrar el campo de contenido del **fichero de texto**. Agrega la opción para poder editar su contenido y también poder guardar los cambios desde el menú archivo.
 	- Otra pestaña que muestre un *JTable* que sea el resultado de consultar el contenido de los usuarios dados de alta actualmente en el sistema (base de datos de usuarios), mostrando todos sus campos en diferentes columnas.
 - Añade otro nuevo botón que permita **modificar la contraseña** del usuario que esté actualmente logueado. 	
@@ -53,7 +53,7 @@ Rediseña la **ventana principal** para incorporar nuevas funcionalidades y una 
 
 	![](media/840647d950380324a5c3ae3b8fdee5f3.png)
 
-	- Agrega un **selector de fuentes** a las opciones del menú de *edición*, que permita cambiar de fuente y seleccionar su tamaño para aplicar en toda la interfaz.
+	- Agrega una ventana con un **selector de fuentes** a las opciones del menú de *edición*, que permita cambiar de fuente y seleccionar su tamaño para aplicar en toda la interfaz.
 
 	![](media/7657564353233421efg3.png)
 
