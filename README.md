@@ -45,7 +45,7 @@ Rediseña la **ventana principal** para incorporar nuevas funcionalidades y una 
 - Agrega un *JTabbedPane* con al menos dos pestañas en el panel principal:
 	- Una pestaña para mostrar el campo de contenido del **fichero de texto**. Agrega la opción para poder editar su contenido y también poder guardar los cambios desde el menú archivo.
 	- Otra pestaña que muestre un *JTable* que sea el resultado de consultar el contenido de los usuarios dados de alta actualmente en el sistema (base de datos de usuarios), mostrando todos sus campos en diferentes columnas.
-- Añade otro nuevo botón que permita **modificar la contraseña** del usuario que esté actualmente logueado. 	
+- Añade otro nuevo botón que permita **modificar la contraseña** del usuario que esté actualmente logueado desde otra nueva ventana. 	
 
 
 - Agrega un menú superior con las opciones de **archivo** y **edición**:
