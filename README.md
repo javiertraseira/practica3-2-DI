@@ -55,13 +55,14 @@ Rediseña la **ventana principal** para que a partir de ahora se le añada conte
 		![](media/9cd713b474093125d5571d49cd5b0243.png)
 	- Agrega un **selector de fuentes** que permita cambiar de fuente y seleccionar su tamaño.
 
+		![](media/7657564353233421efg3.png)
+
 
 ## Parte 3
 
 - Agrega una **barra superior** con accesos directos para abrir un fichero, guardarlo, copiar y pegar. Agrega otra barra inferior para darle funcionalidad y usabilidad.
 
 	![](media/840647d950380324a5c3ae3b8fdee5f4.png)
-
 
 - Busca la forma de generar un **ejecutable** para *Windows_64* usando el fichero **jar** generado de tu proyecto usando la aplicación *Launch4J* o mediante el comando `jpackage` de Oracle. 
 
