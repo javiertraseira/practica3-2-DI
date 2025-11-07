@@ -51,11 +51,10 @@ Rediseña la **ventana principal** para que a partir de ahora se le añada conte
 
 - Agrega un menú superior con las opciones de **archivo** y **edición**:
 	- El menú **archivo** tendrá la opción de abrir y guardar archivos de tipo texto cuyo contenido se cargará en el *JTextArea* central de la ventana principal.
-	- Agrega un **selector de color** a las opciones del menú de edición, cuya función sea cambiar el color de los botones de la interfaz y variar entre modo oscuro y modo claro.
-		![](media/9cd713b474093125d5571d49cd5b0243.png)
-	- Agrega un **selector de fuentes** que permita cambiar de fuente y seleccionar su tamaño.
-
+	- Agrega un **selector de fuentes** a las opciones del menú de *edición*, que permita cambiar de fuente y seleccionar su tamaño en toda la interfaz.
 		![](media/7657564353233421efg3.png)
+	- Agrega un **selector de color** a las opciones del menú de *edición*, cuya función sea cambiar el color de los botones de la interfaz y variar entre modo oscuro y modo claro en toda la interfaz.
+		![](media/9cd713b474093125d5571d49cd5b0243.png)		
 
 
 ## Parte 3
@@ -73,8 +72,6 @@ Rediseña la **ventana principal** para que a partir de ahora se le añada conte
 - Configura los parámetros que necesites, como la versión mínima de Java y el icono del ejecutable.
 - Selecciona el archivo de salida (.exe) y guarda el proyecto.
 - Haz clic en *Build wrapper* para generar el .exe.
-
-Puede seguir los pasos desde el siguiente tutorial desde [este enlace.](https://www.raulprietofernandez.net/blog/programacion/como-crear-un-instalador-para-aplicaciones-java-con-install4j)
 
 
 ## Parte 4
