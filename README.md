@@ -1,4 +1,4 @@
-# Práctica 3.2 Usabilidad básica (guía de estilo) e instalación
+# Práctica 3.2 - Proyecto de diseño, usabilidad y despliegue de una aplicación en Java Swing
 
 Esta práctica forma parte del **proyecto evaluable del trimestre**, integrando aspectos de diseño, programación, pruebas y despliegue de aplicaciones de escritorio, por lo que su correcta realización y documentación serán fundamentales para la valoración final del módulo.
 
