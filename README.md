@@ -53,7 +53,8 @@ Rediseña la **ventana principal** para incorporar nuevas funcionalidades y una 
 - Agrega un menú superior con las opciones de **archivo** y **edición**:
 	- El menú **archivo** tendrá la opción de abrir y guardar archivos de tipo texto, cuyo contenido se cargará en el *JTextArea* central de la ventana principal.
 	- Agrega un **selector de fuentes** a las opciones del menú de *edición*, que permita cambiar de fuente y seleccionar su tamaño en toda la interfaz.
-		![](media/7657564353233421efg3.png)
+
+	![](media/7657564353233421efg3.png)
 
 
 ## Parte 3
