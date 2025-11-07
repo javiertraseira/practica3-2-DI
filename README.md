@@ -37,7 +37,9 @@ La práctica consiste en crear una **guía de estilo** para tu aplicación y rel
 
 Rediseña la **ventana principal** para que a partir de ahora se le añada contenido y nuevas funcionalidades:
 - Agrándala y agrégale un gran panel central con un *JTextArea* y otro lateral con los botones. 
-- Agrega una **barra superior** con accesos directos y otra inferior para darle funcionalidad y usabilidad.
+- Agrándala agrégale un gran *JTabbedPane* con al menos dos pestañas en el panel principal:
+	- Una pestaña para mostrar el campo de contenido del fichero de texto. Agrega la opción para poder editar su contenido y también poder guardar los cambios desde el menú archivo.
+	- Añade otra pestaña que muestre un *JTable* que sea el resultado de consultar el contenido de los usuarios dados de alta actualmente en el sistema, mostrando todos sus campos en diferentes columnas.
 - Añade otro nuevo botón que permita **modificar la contraseña** del usuario que esté actualmente logueado. 
 - Agrega un menú superior con las opciones de **archivo** y **edición**:
 	- El menú **archivo** tendrá la opción de abrir y guardar archivos de tipo texto cuyo contenido se cargará en el *JTextArea* central de la ventana principal.
@@ -48,6 +50,7 @@ Rediseña la **ventana principal** para que a partir de ahora se le añada conte
 
 ## Parte 3
 
+- Agrega una **barra superior** con accesos directos y otra inferior para darle funcionalidad y usabilidad.
 
 - Crea una **prueba automizada** a cualquier parte de la interfaz y documéntala.
 
