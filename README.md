@@ -26,31 +26,43 @@ Conserva las reglas de la 3.1 para usuario, contraseña, confirmación y cuentas
 |---|---|
 | Nombre y apellidos | Comprueba la longitud admitida por la base de datos. Admite nombres con tildes, espacios, guiones y apóstrofos. |
 | Correo electrónico | Comprueba que tiene una estructura básica válida y que no contiene espacios. |
-| Fecha de nacimiento | Utiliza de selector visual de guía `JDateChooser` |
+| Selector de fecha de nacimiento | Utiliza de selector visual de guía `JDateChooser` |
 
-Al usar `JDateChooser`, añade JCalendar mediante Maven y configura `dateFormatString` como `dd/MM/yyyy`. Valida la fecha como `LocalDate` y guárdala como `DATE` en MySQL.
+Para el **selector de fecha de nacimiento** usar `JDateChooser`:
+
+1. **Añade la dependencia.** Incluye `com.toedter:jcalendar:1.4` en el `pom.xml` y compila el proyecto para que Maven descargue el JAR.
+2. **Añade el componente a Matisse.** Ve a **Tools → Palette → Swing/AWT Components → Add from JAR…**. Selecciona `jcalendar-1.4.jar` en tu repositorio local de Maven y elige `JDateChooser`. Arrástralo al formulario `NuevoUsuario` y configura `dateFormatString` como `dd/MM/yyyy`.
+3. **Adapta el código del registro.** Lee la fecha con `getDate()`. Si está vacía, guarda `NULL`. Si tiene valor, conviértela a `LocalDate` y guárdala como `DATE` en MySQL.
 
 
 ### Fichero de configuración de Aiven
 
-La configuración de la base de datos deberá de leerse de un fichero `config.properties` en lugar de estar escrita en el código.
+En la práctica 3.1 los datos de conexión estaban escritos en `ConexionBD`. Ahora los leerás de un fichero llamado `config_mysql.properties`. 
 
-Ejemplo de fichero `config.properties`:
-```
-db.url=jdbc:mysql://di-agenda-di-contactos-26.k.aivencloud.com:27428/usuarios
-db.user=avnadmin
-db.password=1234
+Para las primeras pruebas desde NetBeans, guárdalo en `src/main/resources`, pero debería de estar en tu carpeta de usuario *home*.
+
+```properties
+url_bd=jdbc:mysql://HOST_AIVEN:PUERTO_AIVEN/usuarios
+user=avnadmin
+pwd=CONTRASENA_MYSQL
 ```
 
-Ayúdate de la clase `Properties` para leer ficheros de configuración:
+En `ConexionBD`, carga el fichero **dentro de `abrir()`** mediante `Properties` y un lector que se cierre automáticamente.
 
 ```java
+Path ruta = Path.of("src", "main", "resources", "config_mysql.properties");
 Properties propiedades = new Properties();
-propiedades.load(new FileReader("src/main/resources/config_derby.properties"));
-url_bd = propiedades.getProperty("url_bd");
-user = propiedades.getProperty("user");
-pwd = propiedades.getProperty("pwd");    
+
+try (Reader lector = Files.newBufferedReader(ruta)) {
+    propiedades.load(lector);
+} catch (IOException ex) {
+    throw new SQLException("No se pudo leer " + ruta.toAbsolutePath(), ex);
+}
 ```
+
+Recupera los valores con `getProperty("url_bd")`, `getProperty("user")` y `getProperty("pwd")`. Comprueba que las tres claves tienen valor antes de llamar a `DriverManager.getConnection(url, usuario, clave)`.
+
+**Para la entrega**, mueve el fichero privado a la carpeta personal y cambia la ruta a `Path.of(System.getProperty("user.home"), "config_mysql.properties")`. Comprueba que la conexión funciona también desde el JAR.
 
 ## Parte 2 Ventana principal y mejora propia
 
@@ -87,18 +99,18 @@ En el evento de cada botón de navegación, muestra la tarjeta correspondiente c
 
 ### Menú superior
 
-Agrega un menú superior con las opciones de **archivo** y **edición**:
-- El menú **archivo** tendrá la opción de abrir y guardar archivos de tipo texto, cuyo contenido se cargará en el *JTextArea* central de la ventana principal.
-- El menú **edición** deberá tener un **selector de fuentes**. Al hacer clic abrirá una  ventana que permitará la fuente y seleccionar su tamaño para aplicar en toda la interfaz.
+Añade un `JMenuBar` con dos menús.
 
-![](media/7657564353233421efg3.png)
+- **Archivo.** Incluye **Abrir…**, **Guardar…** y **Salir**. Usa `JFileChooser` para seleccionar el archivo de texto que se abrirá o guardará en **Notas**.
+- **Edición.** Incluye **Fuente y tamaño…**. Abre un diálogo para elegir una familia tipográfica y un tamaño. Aplica la elección a la interfaz y comprueba que los textos siguen siendo legibles y caben en los controles.
 
-### Apartados principales 
+### Apartados principales
 
-- Deberá mostrar un apartado para mostrar el contenido del **fichero de texto**. Agrega la opción para poder editar su contenido y también poder abrir oguardar los cambios desde el menú **archivo**.
-- Otro apartado que muestre el contenido de una **tabla** *JTable* que sea el resultado de consultar el contenido de los usuarios dados de alta actualmente en el sistema (base de datos de usuarios), mostrando todos sus campos en diferentes columnas. 
+- **Usuarios.** Coloca **Nuevo usuario** y **Actualizar** junto al título. Muestra los datos de Aiven en un `JTable` de solo lectura dentro de un `JScrollPane`, con columnas para nombre, apellidos, usuario, fecha de nacimiento y correo. Incluye las cuentas sin datos opcionales y excluye las contraseñas. Debajo de la tabla, muestra el estado de la consulta.
+- **Notas.** Coloca un `JTextArea` editable dentro de un `JScrollPane`. Abre y guarda los archivos en UTF-8. Si hay cambios pendientes al abrir otro archivo, cerrar sesión o salir, ofrece **Guardar**, **Descartar** o **Cancelar**.
+- **Preferencias.** Incluye un control para alternar entre el tema claro y el oscuro, y un botón **Cambiar contraseña** que abra el formulario correspondiente a la cuenta de la sesión.
 
-![](media/840647d950380324a5c3ae3b8fdee5f3.png)
+![Maqueta modelo](media/apartado_usuarios.png) ![Maqueta modelo](media/apartado_notas.png) ![Maqueta modelo](media/apartado_preferencias.png)
 
 
 ### Mejora propia
