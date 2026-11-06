@@ -2,8 +2,12 @@
 
 Esta práctica forma parte del **proyecto evaluable del trimestre**, integrando aspectos de diseño, programación, pruebas y despliegue de aplicaciones de escritorio, por lo que su correcta realización y documentación serán fundamentales para la valoración final del módulo.
 
-Su objetivo es, partiendo de lo trabajo en la *práctica 3.1*, aplicar los principios fundamentales de **diseño de interfaces gráficas** y **usabilidad** en una aplicación desarrollada en Java Swing. Se deberá diseñar y **documentar** una **guía de estilo** personalizada que defina la paleta de colores, tipografía y elementos visuales coherentes con la identidad de su proyecto, además de implementar mejoras visuales y funcionales que favorezcan la experiencia del usuario.
-Asimismo, se trabajará la configuración de la aplicación mediante un fichero externo, el uso de componentes visuales avanzados como *JCalendar* o *JTabbedPane*, la incorporación de temas visuales (modo claro/oscuro), tipografía dinámica y la creación de un **ejecutable** funcional (.exe) para Windows. 
+Amplía el proyecto de la **práctica 3.1** hasta convertirlo en una aplicación de escritorio que puedas entregar y defender. Mantendrás el acceso y el registro con **Java Swing, FlatLaf y MySQL en Aiven**. Después rediseñarás la ventana principal para consultar usuarios, editar notas y gestionar la cuenta.
+
+
+### Elige el contexto de uso
+
+Elige un contexto, como un gimnasio, un club o un aula. Define **quién utilizará la aplicación y qué tareas realizará**. Refleja esa elección en el nombre de la aplicación, los datos ficticios y al menos una decisión de la guía de estilo. Además de la base común, implementa **una mejora propia** que facilite una de esas tareas.
 
 ## Preparación del proyecto
 
@@ -12,17 +16,9 @@ Asimismo, se trabajará la configuración de la aplicación mediante un fichero 
 3. Reutiliza el servicio MySQL de Aiven y el esquema de prácticas. Trabaja con cuentas, nombres y correos ficticios.
 4. Utiliza las ramas `parte-1`, `parte-2` y `parte-3`. Integra cada parte comprobada en `main`, realiza commits descriptivos y registra en Issues los fallos que encuentres y su resolución.
 
-### Elige el contexto de uso
+## Parte 1 Diseño, registro y configuración. Guía de estilo
 
-Antes de diseñar, escribe un breve planteamiento con el **nombre de la aplicación**, a quién va dirigida y qué tareas va a facilitar. Por ejemplo, un gimnasio puede consultar a sus socios y guardar notas de actividades.  
-
-Este contexto debe reflejarse en los nombres de las secciones, en los datos de ejemplo y en al menos una decisión de diseño.
-
-Implementa los requisitos comunes y elige una mejora propia que tenga sentido para las personas que usarían la aplicación.
-
-## Parte 1 Diseño, registro y configuración
-
-### Mejora de la ventana de registro
+### Mejora la ventana de registro
 
 Conserva las reglas de la 3.1 para usuario, contraseña, confirmación y cuentas duplicadas. Añade validación a los datos opcionales **cuando tengan contenido**:
 
@@ -30,7 +26,10 @@ Conserva las reglas de la 3.1 para usuario, contraseña, confirmación y cuentas
 |---|---|
 | Nombre y apellidos | Comprueba la longitud admitida por la base de datos. Admite nombres con tildes, espacios, guiones y apóstrofos. |
 | Correo electrónico | Comprueba que tiene una estructura básica válida y que no contiene espacios. |
-| Fecha de nacimiento | Utiliza un selector visual, como `JDateChooser`, y permite borrar la selección. Admite una fecha válida igual o anterior a la fecha actual. |
+| Fecha de nacimiento | Utiliza de selector visual de guía `JDateChooser` |
+
+Al usar `JDateChooser`, añade JCalendar mediante Maven y configura `dateFormatString` como `dd/MM/yyyy`. Valida la fecha como `LocalDate` y guárdala como `DATE` en MySQL.
+
 
 ### Fichero de configuración de Aiven
 
@@ -55,18 +54,36 @@ pwd = propiedades.getProperty("pwd");
 
 ## Parte 2 Ventana principal y mejora propia
 
-Organiza la ventana principal en dos zonas y nuevas funciones. Un **panel lateral** identifica la aplicación y permite cambiar de sección. El **área de trabajo** muestra el título, las acciones y el contenido de la sección activa. Reserva espacio para mensajes como «Cargando directorio», «Archivo guardado» o «Hay cambios sin guardar».
+### Diseño en Matisse
 
-En Swing puedes construir la pantalla con un `JPanel` lateral y un panel central con `CardLayout` para alternar las vistas. También puedes conservar un `JTabbedPane` si encaja en tu diseño. Marca la sección activa, mantén las acciones de cuenta en una ubicación previsible y comprueba que el contenido sigue siendo legible al redimensionar.
+Construye la ventana `Principal` en dos zonas. El **lateral** identifica la aplicación, muestra la sección activa y sitúa el nombre de la cuenta y **Cerrar sesión** al pie. El **área de trabajo** contiene las secciones **Usuarios**, **Notas** y **Preferencias**. Al iniciar sesión, se muestra Usuarios.
+
+Utiliza la maqueta como referencia para distribuir la ventana principal:
+
+1. Aplica `BorderLayout` a la ventana. Coloca un `JPanel` para el menú lateral en `WEST` y otro para el área de trabajo en `CENTER`.
+2. Aplica `CardLayout` al área de trabajo o panel central y añade tres `JPanel`: **Usuarios**, **Notas** y **Preferencias**. Cada botón lateral abre su panel con `CardLayout.show(...)`.
+3. Usa **Diseño libre** dentro de cada panel para colocar el título, las acciones y el contenido.
 
 
 ![Maqueta modelo](media/maqueta_modelo.png)
 
 ### Menú lateral
 
-- Identifica al usuario que ha iniciado sesión y mantén disponible **Cerrar sesión**.
-- Añade otro nuevo botón que permita **modificar la contraseña** del usuario que esté actualmente logueado desde otra nueva ventana. 
-- Permite alternar entre **tema claro y oscuro** con FlatLaf. Comprueba la legibilidad y el aspecto de las ventanas y diálogos al cambiar de tema.	
+Organiza el menú lateral en tres bloques, de arriba abajo.
+
+| Bloque | Qué debe incluir |
+|---|---|
+| **Identidad de la aplicación** | Un icono sencillo y el nombre que hayas elegido para tu proyecto. |
+| **Navegación** | Los botones **Usuarios**, **Notas** y **Preferencias**. Cada botón muestra su sección en el área de trabajo. Al iniciar sesión, **Usuarios** aparece seleccionado. |
+| **Sesión** | El nombre de la cuenta, un texto breve como «Sesión iniciada» y el botón **Cerrar sesión**, que devuelve al login. Coloca este bloque al pie del lateral. |
+
+Para redondear ligeramente las esquinas con FlatLaf, puedes añadir esta línea después de `initComponents()`, usando el nombre de tu botón:
+
+```java
+btnUsuarios.putClientProperty("FlatLaf.style", "arc: 12");
+```
+
+En el evento de cada botón de navegación, muestra la tarjeta correspondiente con `CardLayout.show(...)` y actualiza el resaltado. Comprueba con **Tab** que el foco se distingue del resaltado de la sección activa.
 
 ### Menú superior
 
