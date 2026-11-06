@@ -1,6 +1,6 @@
 # Práctica 3.2 - Rediseño y entrega de una aplicación de escritorio 
 
-Esta práctica forma parte del **proyecto evaluable del trimestre**, integrando aspectos de diseño, programación, pruebas y despliegue de aplicaciones de escritorio, por lo que su correcta realización y documentación serán fundamentales para la valoración final del módulo.
+Esta práctica forma parte del **primer proyecto evaluable**, integrando aspectos de diseño, programación, pruebas y despliegue de aplicaciones de escritorio, por lo que su correcta realización y documentación serán fundamentales para la valoración final del módulo.
 
 Amplía el proyecto de la **práctica 3.1** hasta convertirlo en una aplicación de escritorio que puedas entregar y defender. Mantendrás el acceso y el registro con **Java Swing, FlatLaf y MySQL en Aiven**. Después rediseñarás la ventana principal para consultar usuarios, editar notas y gestionar la cuenta.
 
@@ -24,8 +24,8 @@ Conserva las reglas de la 3.1 para usuario, contraseña, confirmación y cuentas
 
 | Campo | Comprobación |
 |---|---|
-| Nombre y apellidos | Comprueba la longitud admitida por la base de datos. Admite nombres con tildes, espacios, guiones y apóstrofos. |
-| Correo electrónico | Comprueba que tiene una estructura básica válida y que no contiene espacios. |
+| Nombre y apellidos | Comprueba una longitud mínima y máxima.  |
+| Correo electrónico | Comprueba que tiene una estructura básica válida. |
 | Selector de fecha de nacimiento | Utiliza de selector visual de guía `JDateChooser` |
 
 Para el **selector de fecha de nacimiento** usar `JDateChooser`:
