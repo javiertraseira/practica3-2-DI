@@ -59,6 +59,9 @@ Organiza la ventana principal en dos zonas y nuevas funciones. Un **panel latera
 
 En Swing puedes construir la pantalla con un `JPanel` lateral y un panel central con `CardLayout` para alternar las vistas. También puedes conservar un `JTabbedPane` si encaja en tu diseño. Marca la sección activa, mantén las acciones de cuenta en una ubicación previsible y comprueba que el contenido sigue siendo legible al redimensionar.
 
+
+![Maqueta modelo](media/maqueta_modelo.png)
+
 ### Menú lateral
 
 - Identifica al usuario que ha iniciado sesión y mantén disponible **Cerrar sesión**.
