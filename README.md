@@ -31,7 +31,7 @@ Conserva las reglas de la 3.1 para usuario, contraseña, confirmación y cuentas
 Para el **selector de fecha de nacimiento** usar `JDateChooser`:
 
 1. **Añade la dependencia.** Incluye `com.toedter:jcalendar:1.4` en el `pom.xml` y compila el proyecto para que Maven descargue el JAR.
-2. **Añade el componente a Matisse.** Ve a **Tools → Palette → Swing/AWT Components → Add from JAR…**. Selecciona `jcalendar-1.4.jar` en tu repositorio local de Maven y elige `JDateChooser`. Arrástralo al formulario `NuevoUsuario` y configura `dateFormatString` como `dd/MM/yyyy`.
+2. **Añade el componente a Matisse.** Ve a **Tools → Palette → Swing/AWT Components → Add from JAR…**. Selecciona *jcalendar-1.4.jar* en tu repositorio local de Maven y elige `JDateChooser`. Arrástralo al formulario y configura `dateFormatString` como `dd/MM/yyyy`.
 3. **Adapta el código del registro.** Lee la fecha con `getDate()`. Si está vacía, guarda `NULL`. Si tiene valor, conviértela a `LocalDate` y guárdala como `DATE` en MySQL.
 
 
@@ -66,11 +66,17 @@ Recupera los valores con `getProperty("url_bd")`, `getProperty("user")` y `getPr
 
 ## Parte 2 Ventana principal y mejora propia
 
+### Guía de estilo
+
+Utiliza la [plantilla de la práctica](Plantilla_guia_de_estilo.md) para preparar `docs/guia-de-estilo.md`. Incluye el boceto de la ventana principal, paleta, tipografía, iconos, tamaños y márgenes. Muestra cómo se distinguen el foco, la sección activa, los mensajes de estado y los errores.
+
+Aplica la guía al login, al registro y a la ventana principal. Puedes usar los recursos de la carpeta `Icons` del repositorio y copiar los que elijas a `src/main/resources/icons`.
+
 ### Diseño en Matisse
 
 Construye la ventana `Principal` en dos zonas. El **lateral** identifica la aplicación, muestra la sección activa y sitúa el nombre de la cuenta y **Cerrar sesión** al pie. El **área de trabajo** contiene las secciones **Usuarios**, **Notas** y **Preferencias**. Al iniciar sesión, se muestra Usuarios.
 
-Utiliza la maqueta como referencia para distribuir la ventana principal:
+Utiliza este **modelo de maqueta** como referencia para distribuir la ventana principal:
 
 1. Aplica `BorderLayout` a la ventana. Coloca un `JPanel` para el menú lateral en `WEST` y otro para el área de trabajo en `CENTER`.
 2. Aplica `CardLayout` al área de trabajo o panel central y añade tres `JPanel`: **Usuarios**, **Notas** y **Preferencias**. Cada botón lateral abre su panel con `CardLayout.show(...)`.
