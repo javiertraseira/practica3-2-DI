@@ -37,7 +37,7 @@ Para el **selector de fecha de nacimiento** usar `JDateChooser`:
 
 ### Fichero de configuración de Aiven
 
-En la práctica 3.1 los datos de conexión estaban escritos en `ConexionBD`. Ahora los leerás de un fichero llamado `config_mysql.properties`. 
+En la *práctica 3.1* los datos de conexión estaban escritos en `ConexionBD`. Ahora los leerás de un fichero llamado `config_mysql.properties`. 
 
 Para las primeras pruebas desde NetBeans, guárdalo en `src/main/resources`, pero debería de estar en tu carpeta de usuario *home*.
 
@@ -161,7 +161,6 @@ En `docs/index.md` incluye el contexto de uso, las funciones, capturas de la ver
 - Haz clic en *Build wrapper* para generar el .exe.
 
 ### Comprobaciones de integración y pruebas manuales
-
 
 Conserva las pruebas de regresión de la 3.1 y añade los siguientes casos a `TEST/casos-prueba.md`. Registra el resultado, la fecha y una evidencia cuando aporte información.
 
