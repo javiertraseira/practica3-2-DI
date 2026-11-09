@@ -37,7 +37,7 @@ Para el **selector de fecha de nacimiento** usar `JDateChooser`:
 
 ### Fichero de configuración de Aiven
 
-En la *práctica 3.1* los datos de conexión estaban escritos en `ConexionBD`. Ahora los leerás de un fichero llamado `config_mysql.properties`. 
+En la *práctica 3.1* los datos de conexión estaban escritos en *ConexionBD*. Ahora los leerás de un fichero llamado `config_mysql.properties`. 
 
 Para las primeras pruebas desde NetBeans, guárdalo en `src/main/resources`, pero debería de estar en tu carpeta de usuario *home*.
 
@@ -47,7 +47,7 @@ user=avnadmin
 pwd=CONTRASENA_MYSQL
 ```
 
-En `ConexionBD`, carga el fichero dentro de `abrir()` mediante `Properties` y un lector que se cierre automáticamente.
+En *ConexionBD*, carga el fichero dentro de `abrir()` mediante `Properties` y un lector que se cierre automáticamente.
 
 ```java
 Path ruta = Path.of("src", "main", "resources", "config_mysql.properties");
