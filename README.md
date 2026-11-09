@@ -127,18 +127,23 @@ Crea al menos estos tres apartados, cuyo contenido podrá personalizarse en el s
 
 Personaliza los nombres y funciones de los botones **Usuarios** o **Notas**, acorde a las funciones de tu aplicación.
 
-Implementa **varias** de estas mejoras, que resuelvan las necesidades de tu aplicación/contexto. Puedes varias de estas propuestas o plantear otra de alcance parecido:
+Implementa **varias** de estas mejoras, que resuelvan las necesidades de tu aplicación/contexto. Puedes implementar varias de estas propuestas o plantear otra de alcance parecido:
 
-| Idea | Ejemplo |
-|---|---|
-| Localizar registros | Filtrar el directorio por nombre o usuario. |
-| Agilizar tareas frecuentes | Añadir una barra de herramientas o un menú contextual al editor. Reutiliza las acciones que ya existen. |
-| Adaptar la lectura | Elegir un tamaño de letra o un color para el editor, manteniendo la legibilidad. |
-| Preparar documentos habituales | Incorporar una plantilla de notas según el ámbito de la aplicación. |
-| Añadir una vista de detalle | Mostrar los datos relevantes del registro seleccionado. |
-| Añadir un selector de color de tema | Utiliza un selector de color para modificar colores de componentes del tema. |
-| Añadir proceso en segundo plano | Realizar la carga de datos en segundo plano para evitar que la aplicación se bloquee. |
-| Añadir otro apartado personalizado | Añadir un apartado personalizado con funciones propias de tu aplicación. |
+| Idea | Descripción | Dificultad |
+|---|---|---|
+| **Búsqueda y filtrado de registros** | Añade un campo de búsqueda que permita filtrar los registros del `JTable` por nombre, apellidos o usuario. La tabla debe actualizarse al escribir y permitir recuperar todos los registros al borrar el filtro. | Sencilla |
+| **Ordenación y recuento de registros** | Permite ordenar los registros pulsando sobre las cabeceras de la tabla. Muestra también el número de registros visibles, teniendo en cuenta los filtros aplicados. | Sencilla |
+| **Menú contextual** | Incorpora un menú que aparezca al pulsar el botón derecho del ratón sobre el editor de notas o la tabla de usuarios. Incluye acciones relacionadas con el componente seleccionado, reutilizando las funciones ya implementadas. | Sencilla |
+| **Contador de palabras y caracteres** | Muestra en la parte inferior del editor de notas el número de palabras y caracteres del documento. Actualiza los contadores automáticamente mientras se escribe. | Sencillo-medio |
+| **Ficha de detalle** | Al seleccionar un registro de la tabla, permite abrir un `JDialog` que muestre sus datos de forma organizada. No deben mostrarse contraseñas ni otros datos sensibles. | Media |
+| **Plantillas de documentos** | Incorpora al editor al menos dos plantillas de texto relacionadas con el contexto de tu aplicación. El usuario podrá seleccionar una plantilla y editar su contenido antes de guardarlo. | Media |
+| **Búsqueda dentro de las notas** | Añade una función para buscar palabras o expresiones dentro del contenido del `JTextArea`. Resalta la coincidencia encontrada y permite desplazarse a las siguientes apariciones. | Media |
+| **Deshacer y rehacer** | Permite deshacer y rehacer modificaciones realizadas en el editor de notas. Incorpora las opciones correspondientes en un menú y habilita los atajos `Ctrl+Z` y `Ctrl+Y`. | Media |
+| **Exportación de registros** | Añade una opción para exportar los registros visibles del directorio a un archivo CSV. Utiliza `JFileChooser` para elegir el destino y guarda el contenido en UTF-8, incluyendo los nombres de las columnas. | Media |
+| **Personalización del editor** | Utiliza `JColorChooser` para que el usuario pueda cambiar los colores del texto y del fondo del editor de notas. Incorpora una opción para recuperar los colores originales y evita combinaciones que dificulten la lectura. | Media |
+| **Nuevo apartado personalizado** | Añade una sección mediante `CardLayout` que resuelva una necesidad propia de tu aplicación, como gestionar actividades, tareas o sesiones. Debe permitir realizar al menos dos operaciones sobre los datos y conservar los cambios entre ejecuciones. | Medio-Avanzado |
+| **Carga de datos en segundo plano** | Utiliza `SwingWorker` para consultar los registros de Aiven sin bloquear la interfaz. Mientras se realiza la consulta, muestra un indicador de carga y evita que el usuario inicie varias consultas simultáneas. | Avanzado |
+| **Importación de usuarios desde CSV** | Permite seleccionar un archivo CSV con usuarios ficticios, validar los registros e importar los correctos a MySQL, mostrando un resumen de registros añadidos y rechazados. | Avanzado |
 
 Documenta qué problema resuelve, cómo se utiliza y cómo has comprobado su funcionamiento.
 
