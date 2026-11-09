@@ -123,9 +123,9 @@ Crea al menos estos tres apartados, cuyo contenido podrá personalizarse en el s
 
 ## Parte 3. Mejoras propias. Pruebas y distribución
 
-### Mejora propia
+### Mejoras propias
 
-Personaliza los nombres y funciones de los botones **usuarios** o **Notas**, acorde a las funciones de tu aplicación.
+Personaliza los nombres y funciones de los botones **Usuarios** o **Notas**, acorde a las funciones de tu aplicación.
 
 Implementa **varias** de estas mejoras, que resuelvan las necesidades de tu aplicación/contexto. Puedes varias de estas propuestas o plantear otra de alcance parecido:
 
