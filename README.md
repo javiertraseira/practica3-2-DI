@@ -30,9 +30,9 @@ Conserva las reglas de la 3.1 para usuario, contraseña, confirmación y cuentas
 
 Para el **selector de fecha de nacimiento** usar `JDateChooser`:
 
-1. **Añade la dependencia.** Incluye `com.toedter:jcalendar:1.4` en el `pom.xml` y compila el proyecto para que Maven descargue el JAR.
-2. **Añade el componente a Matisse.** Ve a **Tools → Palette → Swing/AWT Components → Add from JAR…**. Selecciona *jcalendar-1.4.jar* en tu repositorio local de Maven y elige `JDateChooser`. Arrástralo al formulario y configura `dateFormatString` como `dd/MM/yyyy`.
-3. **Adapta el código del registro.** Lee la fecha con `getDate()`. Si está vacía, guarda `NULL`. Si tiene valor, conviértela a `LocalDate` y guárdala como `DATE` en MySQL.
+1. Añade la dependencia. Incluye `com.toedter:jcalendar:1.4` en el `pom.xml` y compila el proyecto para que Maven descargue el JAR.
+2. Añade el componente a Matisse. Ve a **Tools → Palette → Swing/AWT Components → Add from JAR…**. Selecciona *jcalendar-1.4.jar* en tu repositorio local de Maven y elige `JDateChooser`. Arrástralo al formulario y configura `dateFormatString` como `dd/MM/yyyy`.
+3. Adapta el código del registro. Lee la fecha con `getDate()`. Si está vacía, guarda `NULL`. Si tiene valor, conviértela a `LocalDate` y guárdala como `DATE` en MySQL.
 
 
 ### Fichero de configuración de Aiven
@@ -47,7 +47,7 @@ user=avnadmin
 pwd=CONTRASENA_MYSQL
 ```
 
-En `ConexionBD`, carga el fichero **dentro de `abrir()`** mediante `Properties` y un lector que se cierre automáticamente.
+En `ConexionBD`, carga el fichero dentro de `abrir()` mediante `Properties` y un lector que se cierre automáticamente.
 
 ```java
 Path ruta = Path.of("src", "main", "resources", "config_mysql.properties");
@@ -112,16 +112,23 @@ Añade un `JMenuBar` con dos menús.
 
 ### Apartados principales
 
+A pesar de que estas funciones se personalizarán en la siguiente parte, crea estos 3 apartados:
+
 - **Usuarios.** Coloca **Nuevo usuario** y **Actualizar** junto al título. Muestra los datos de Aiven en un `JTable` de solo lectura dentro de un `JScrollPane`, con columnas para nombre, apellidos, usuario, fecha de nacimiento y correo. Incluye las cuentas sin datos opcionales y excluye las contraseñas. Debajo de la tabla, muestra el estado de la consulta.
-- **Notas.** Coloca un `JTextArea` editable dentro de un `JScrollPane`. Abre y guarda los archivos en UTF-8. Si hay cambios pendientes al abrir otro archivo, cerrar sesión o salir, ofrece **Guardar**, **Descartar** o **Cancelar**.
+- **Notas.** Coloca un `JTextArea` editable dentro de un `JScrollPane`. Abre y guarda los archivos en formato texto (UTF-8). Si hay cambios pendientes al abrir otro archivo, cerrar sesión o salir, ofrece **Guardar**, **Descartar** o **Cancelar**.
 - **Preferencias.** Incluye un control para alternar entre el tema claro y el oscuro, y un botón **Cambiar contraseña** que abra el formulario correspondiente a la cuenta de la sesión.
 
 ![Maqueta modelo](media/apartado_usuarios.png) ![Maqueta modelo](media/apartado_notas.png) ![Maqueta modelo](media/apartado_preferencias.png)
 
 
+
+## Parte 3. Mejoras propias. Pruebas y distribución
+
 ### Mejora propia
 
-Implementa **una** mejora que resuelva una necesidad de tu contexto. Puedes elegir una de estas propuestas o plantear otra de alcance parecido:
+Personaliza los nombres y funciones de los botones **usuarios** o **Notas**, acorde a las funciones de tu aplicación.
+
+Implementa **varias** mejora que resuelva una necesidad de tu contexto. Puedes elegir una de estas propuestas o plantear otra de alcance parecido:
 
 | Idea | Ejemplo |
 |---|---|
@@ -133,8 +140,6 @@ Implementa **una** mejora que resuelva una necesidad de tu contexto. Puedes eleg
 | Añadir un selector de color de tema | Utiliza un selector de color para modificar colores de componentes del tema |
 
 Documenta qué problema resuelve, cómo se utiliza y cómo has comprobado su funcionamiento.
-
-## Parte 3. Pruebas y distribución
 
 ### Pruebas automatizadas
 
