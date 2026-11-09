@@ -25,7 +25,7 @@ Conserva las reglas de la 3.1 para usuario, contraseña, confirmación y cuentas
 |---|---|
 | Nombre y apellidos | Comprueba una longitud mínima y máxima.  |
 | Correo electrónico | Comprueba que tiene una estructura básica válida. |
-| Selector de fecha de nacimiento | Utiliza de selector visual de guía `JDateChooser` |
+| Selector de fecha de nacimiento | Utiliza como selector visual de guía `JDateChooser` |
 
 Para el **selector de fecha de nacimiento** usar `JDateChooser`:
 
@@ -85,7 +85,7 @@ Utiliza este **modelo de maqueta** como referencia para distribuir la ventana pr
 
 ### Menú lateral
 
-Organiza el menú lateral en tres bloques, de arriba abajo.
+Organiza el menú lateral en al menos **tres bloques**, de arriba abajo.
 
 | Bloque | Qué debe incluir |
 |---|---|
@@ -111,7 +111,7 @@ Añade un `JMenuBar` con dos menús.
 
 ### Apartados principales
 
-Crea estos 3 apartados, cuyo contenido podrá personalizarse en el siguiente apartado:
+Crea al menos estos tres apartados, cuyo contenido podrá personalizarse en el siguiente apartado:
 
 - **Usuarios.** Coloca **Nuevo usuario** y **Actualizar** junto al título. Muestra los datos de Aiven en un `JTable` de solo lectura dentro de un `JScrollPane`, con columnas para nombre, apellidos, usuario, fecha de nacimiento y correo. Incluye las cuentas sin datos opcionales y excluye las contraseñas. Debajo de la tabla, muestra el estado de la consulta.
 - **Notas.** Coloca un `JTextArea` editable dentro de un `JScrollPane`. Abre y guarda los archivos en formato **texto** (UTF-8). Al abrir otro archivo, cerrar sesión o salir, avisa al usuario para que guarde o no sus cambios.
