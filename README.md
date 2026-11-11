@@ -211,18 +211,13 @@ Añade al *README* un enlace a la documentación y al informe de pruebas. Si man
 
 Antes de entregar:
 
-- [ ] Maven, FlatLaf y los paquetes siguen la organización trabajada.
-- [ ] El código respeta la separación Modelo–VistaControlador.
-- [ ] Login, registro y cierre de sesión funcionan con Aiven.
-- [ ] Las reglas de validación están en `ValidadorUsuario`.
-- [ ] La conexión utiliza el host y puerto reales de Aiven y las credenciales configuradas.
-- [ ] Los datos de conexión están centralizados en las variables de clase de `ConexionBD`.
-- [ ] Los campos opcionales pueden quedar vacíos y los informados se guardan.
-- [ ] La versión publicada del código, las capturas y la documentación utilizan valores de ejemplo para las credenciales.
-- [ ] Se validan los obligatorios, se admiten opcionales vacíos y se evitan duplicados.
-- [ ] Las conexiones, sentencias y resultados JDBC se cierran correctamente.
-- [ ] Pasan los cuatro casos unitarios y al menos una prueba con AssertJ Swing.
-- [ ] Se han ejecutado y documentado las comprobaciones reales con Aiven.
-- [ ] Se ha realizado la revisión de usabilidad según los requerimientos y registrado sus conclusiones.
-- [ ] El JAR se ejecuta fuera de NetBeans y la documentación permite reproducirlo.
-- [ ] Las ramas están integradas en `main` y las incidencias quedan identificadas.
+- [ ] El proyecto compila con Maven y Java 21, utiliza FlatLaf y respeta la separación Modelo–VistaControlador.
+- [ ] Funcionan el registro, el inicio y cierre de sesión y el cambio de contraseña. El registro admite campos opcionales vacíos, guarda los informados y evita duplicados.
+- [ ] Funcionan Usuarios, Notas y Preferencias. Las mejoras propias están implementadas, probadas y documentadas.
+- [ ] La interfaz sigue la guía de estilo y la revisión de usabilidad está documentada.
+- [ ] La aplicación conecta a Aiven leyendo `config_mysql.properties`. La entrega incluye la plantilla `.example` con valores ficticios.
+- [ ] Se han implementado y probado al menos dos mejoras, elegidas de la lista o de propuesta propia. La documentación explica qué aporta cada una y cómo se ha comprobado.
+- [ ] Se han vuelto a ejecutar las pruebas de la 3.1 y se han añadido al menos dos pruebas automatizadas. Los resultados están en `TEST/casos-prueba.md`.
+- [ ] El JAR con dependencias y la distribución para Windows se han probado fuera de NetBeans. Ambos se adjuntan a la entrega o tienen un enlace de descarga.
+- [ ] Se ha realizado la revisión de usabilidad según los requerimientos y registrado conclusiones.
+- [ ] El README enlaza `docs/index.md`, la guía de estilo y el informe de pruebas. Las ramas están integradas en `main` y las incidencias están documentadas.
