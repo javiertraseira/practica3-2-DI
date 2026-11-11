@@ -6,7 +6,7 @@ Amplía el proyecto de la **práctica 3.1** hasta convertirlo en una aplicación
 
 ### Elige el contexto de uso
 
-Elige un contexto, como un gimnasio, un club o un aula. Define **quién utilizará la aplicación y qué tareas realizará**. Refleja esa elección en el nombre de la aplicación, los datos ficticios y al menos una decisión de la guía de estilo. Además de la base común, implementa **una mejora propia** que facilite una de esas tareas.
+Elige un contexto, como un gimnasio, un club o un aula. Define **quién utilizará la aplicación y qué tareas realizará**. Refleja esa elección en el nombre de la aplicación, los datos ficticios y la decisión de la guía de estilo. Además de la base común, implementa **varias mejoras propias** para personalizar tu aplicación.
 
 ## Preparación del proyecto
 
@@ -112,7 +112,7 @@ En el evento de cada botón de navegación, muestra la tarjeta correspondiente c
 
 ### Menú superior
 
-Añade un `JMenuBar` con dos menús.
+Añade un `JMenuBar` con tres menús.
 
 - **Archivo.** Incluye **Abrir…**, **Guardar…** y **Salir**. Usa `JFileChooser` para seleccionar el archivo de texto que se abrirá o guardará en **Notas**.
 - **Edición.** Incluye **Fuente y tamaño…**. Abre un diálogo para elegir una familia tipográfica y un tamaño. Aplica la elección a la interfaz y comprueba que los textos siguen siendo legibles y caben en los controles.
@@ -164,14 +164,18 @@ Vuelve a ejecutar las pruebas de la 3.1 como **regresión**. Mantén **JUnit 4**
 
 Agrega al menos **dos pruebas** automatizadas adicionales.
 
-### Empaquetado y entrega
+### Empaquetado y distribución (instalador)
 
-1. Genera y prueba el **JAR con dependencias** de la práctica anterior.
-2. Genera una **distribución para Windows**. Puedes usar `jpackage --type app-image` y entregar la carpeta que contiene el lanzador `.exe`, o usar Launch4j y documentar el entorno Java que necesita su lanzador. Si optas por un instalador con `jpackage --type exe`, sigue los requisitos de la herramienta en Windows. [Guía de empaquetado de Java 21](https://docs.oracle.com/en/java/javase/21/jpackage/packaging-overview.html).
-3. Ejecuta la distribución desde una carpeta distinta a la del proyecto y comprueba el arranque, los recursos y la lectura de la configuración privada.
-4. Entrega el repositorio con el código y las pruebas. Enlaza desde el README del repositorio `docs/index.md`, la guía de estilo y el informe de pruebas. Adjunta el JAR y la distribución o indica dónde descargarlos.
+1. **Genera el JAR con dependencias** y comprueba que arranca fuera de NetBeans.
+2. **Prepara la distribución para Windows** con una de estas opciones:
+   - **Launch4j.** Selecciona el JAR, indica el `.exe` de salida y configura Java 21 como versión mínima. Pulsa **Build wrapper** y documenta cómo debe estar disponible Java en el equipo de destino. [Guía de Launch4j](https://launch4j.sourceforge.net/docs.html)
+   - Como alternativa también puede usar **`jpackage --type app-image`.** Entrega la carpeta completa que genera, con el lanzador `.exe` y el entorno Java incluido. [Guía de empaquetado de Java 21](https://docs.oracle.com/en/java/javase/21/jpackage/packaging-overview.html)
+3. **Prueba la distribución** desde otra carpeta. Comprueba que arranca, carga sus recursos y lee `config_mysql.properties` desde la carpeta personal. Incluye en la entrega únicamente `config_mysql.properties.example` con valores ficticios.
+4. **Entrega el repositorio** con el código y las pruebas. Adjunta el JAR y la distribución para Windows o indica dónde descargarlos. Enlaza desde el README `docs/index.md`, la guía de estilo y el informe de pruebas.
 
-En `docs/index.md` incluye el contexto de uso, las funciones, capturas de la versión final, la organización del código, los pasos de configuración y ejecución, y el resultado de la revisión de usabilidad. Incluye el script SQL si has cambiado el esquema. Publica la plantilla de configuración con datos de ejemplo.
+En `docs/index.md`, incluye el contexto, las funciones, las capturas, la organización del código, los pasos de configuración y ejecución y el resultado de la revisión de usabilidad. Si has modificado el esquema de la base de datos, adjunta el script SQL.
+
+**Configuración para la prueba.** Antes de ejecutar el JAR o el lanzador `.exe`, coloca tu `config_mysql.properties` privado en la carpeta personal del usuario (`user.home`). Inicia sesión con una cuenta ficticia para comprobar que la aplicación lee el fichero y se conecta a Aiven. En la entrega incluye la plantilla `config_mysql.properties.example` con valores de ejemplo.
 
 
 ### Creación de un instalador Launch4J (Windows)
