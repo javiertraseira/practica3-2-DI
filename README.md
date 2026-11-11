@@ -155,6 +155,8 @@ Implementa **varias** de estas mejoras, que resuelvan las necesidades de tu apli
 
 Documenta qué problema resuelve, cómo se utiliza y cómo has comprobado su funcionamiento.
 
+Puedes encontrar ayuda sobre carga de datos en segundo plano o importaciones de CSV en:
+
 - **Carga en segundo plano.** Consulta Aiven en `doInBackground()` y actualiza la tabla en `done()`, como en el código de la práctica. [Trabajar en segundo plano con `SwingWorker` (Java 21)](https://docs.oracle.com/en/java/javase/21/docs/api/java.desktop/javax/swing/SwingWorker.html)
 - **Importar datos desde CSV.** Usa Apache Commons CSV para leer las filas y acceder a las columnas por su encabezado. Después, aplica las validaciones del proyecto y guarda en MySQL los registros válidos. [Leer archivos CSV en Java con Apache Commons CSV](https://commons.apache.org/proper/commons-csv/apidocs/index.html)
 
@@ -167,7 +169,7 @@ Agrega al menos **dos pruebas** automatizadas adicionales.
 ### Empaquetado y distribución (instalador)
 
 1. **Genera el JAR con dependencias** y comprueba que arranca fuera de NetBeans.
-2. **Prepara la distribución para Windows** con una de estas opciones:
+2. **Prepara la distribución/instalación para Windows** con una de estas opciones:
    - **Launch4j.** Selecciona el JAR, indica el `.exe` de salida y configura Java 21 como versión mínima. Pulsa **Build wrapper** y documenta cómo debe estar disponible Java en el equipo de destino. [Guía de Launch4j](https://launch4j.sourceforge.net/docs.html)
    - Como alternativa también puede usar **`jpackage --type app-image`.** Entrega la carpeta completa que genera, con el lanzador `.exe` y el entorno Java incluido. [Guía de empaquetado de Java 21](https://docs.oracle.com/en/java/javase/21/jpackage/packaging-overview.html)
 3. **Prueba la distribución** desde otra carpeta. Comprueba que arranca, carga sus recursos y lee `config_mysql.properties` desde la carpeta personal. Incluye en la entrega únicamente `config_mysql.properties.example` con valores ficticios.
@@ -177,15 +179,6 @@ En `docs/index.md`, incluye el contexto, las funciones, las capturas, la organiz
 
 **Configuración para la prueba.** Antes de ejecutar el JAR o el lanzador `.exe`, coloca tu `config_mysql.properties` privado en la carpeta personal del usuario (`user.home`). Inicia sesión con una cuenta ficticia para comprobar que la aplicación lee el fichero y se conecta a Aiven. En la entrega incluye la plantilla `config_mysql.properties.example` con valores de ejemplo.
 
-
-### Creación de un instalador Launch4J (Windows)
-
-- Descarga e instala *Launch4j*.
-- Crea un nuevo proyecto en Launch4j y especifica el archivo JAR de tu proyecto en la sección "Jar".
-- Configura los parámetros que necesites, como la versión mínima de Java y el icono del ejecutable.
-- Selecciona el archivo de salida (.exe) y guarda el proyecto.
-- No te olvides agregar el fichero *config_mysql.properties* en una carpeta externa.
-- Haz clic en *Build wrapper* para generar el .exe.
 
 ### Comprobaciones de integración y pruebas manuales
 
