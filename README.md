@@ -4,7 +4,6 @@ Esta práctica forma parte del **primer proyecto evaluable**, integrando aspecto
 
 Amplía el proyecto de la **práctica 3.1** hasta convertirlo en una aplicación de escritorio que puedas entregar y defender. Mantendrás el acceso y el registro con **Java Swing, FlatLaf y MySQL en Aiven**. Después rediseñarás la ventana principal para consultar usuarios, editar notas y gestionar la cuenta.
 
-
 ### Elige el contexto de uso
 
 Elige un contexto, como un gimnasio, un club o un aula. Define **quién utilizará la aplicación y qué tareas realizará**. Refleja esa elección en el nombre de la aplicación, los datos ficticios y al menos una decisión de la guía de estilo. Además de la base común, implementa **una mejora propia** que facilite una de esas tareas.
@@ -26,18 +25,18 @@ Conserva las reglas de la 3.1 para usuario, contraseña, confirmación y cuentas
 |---|---|
 | Nombre y apellidos | Comprueba una longitud mínima y máxima.  |
 | Correo electrónico | Comprueba que tiene una estructura básica válida. |
-| Selector de fecha de nacimiento | Utiliza de selector visual de guía `JDateChooser` |
+| Selector de fecha de nacimiento | Utiliza como selector visual de guía `JDateChooser` |
 
 Para el **selector de fecha de nacimiento** usar `JDateChooser`:
 
-1. **Añade la dependencia.** Incluye `com.toedter:jcalendar:1.4` en el `pom.xml` y compila el proyecto para que Maven descargue el JAR.
-2. **Añade el componente a Matisse.** Ve a **Tools → Palette → Swing/AWT Components → Add from JAR…**. Selecciona *jcalendar-1.4.jar* en tu repositorio local de Maven y elige `JDateChooser`. Arrástralo al formulario y configura `dateFormatString` como `dd/MM/yyyy`.
-3. **Adapta el código del registro.** Lee la fecha con `getDate()`. Si está vacía, guarda `NULL`. Si tiene valor, conviértela a `LocalDate` y guárdala como `DATE` en MySQL.
+1. Añade la dependencia. Incluye `com.toedter:jcalendar:1.4` en el `pom.xml` y compila el proyecto para que Maven descargue el JAR.
+2. Añade el componente a Matisse. Ve a **Tools → Palette → Swing/AWT Components → Add from JAR…**. Selecciona *jcalendar-1.4.jar* en tu repositorio local de Maven y elige `JDateChooser`. Arrástralo al formulario y configura `dateFormatString` como `dd/MM/yyyy`.
+3. Adapta el código del registro. Lee la fecha con `getDate()`. Si está vacía, guarda `NULL`. Si tiene valor, conviértela a `LocalDate` y guárdala como `DATE` en MySQL.
 
 
 ### Fichero de configuración de Aiven
 
-En la práctica 3.1 los datos de conexión estaban escritos en `ConexionBD`. Ahora los leerás de un fichero llamado `config_mysql.properties`. 
+En la *práctica 3.1* los datos de conexión estaban escritos en *ConexionBD*. Ahora los leerás de un fichero llamado `config_mysql.properties`. 
 
 Para las primeras pruebas desde NetBeans, guárdalo en `src/main/resources`, pero debería de estar en tu carpeta de usuario *home*.
 
@@ -47,7 +46,7 @@ user=avnadmin
 pwd=CONTRASENA_MYSQL
 ```
 
-En `ConexionBD`, carga el fichero **dentro de `abrir()`** mediante `Properties` y un lector que se cierre automáticamente.
+En *ConexionBD*, carga el fichero dentro de `abrir()` mediante `Properties` y un lector que se cierre automáticamente.
 
 ```java
 Path ruta = Path.of("src", "main", "resources", "config_mysql.properties");
@@ -60,42 +59,41 @@ try (Reader lector = Files.newBufferedReader(ruta)) {
 }
 ```
 
-Recupera los valores con `getProperty("url_bd")`, `getProperty("user")` y `getProperty("pwd")`. Comprueba que las tres claves tienen valor antes de llamar a `DriverManager.getConnection(url, usuario, clave)`.
+Recupera los valores con `getProperty("nombre_variable")` para la llamada a `DriverManager.getConnection( )`.
 
-**Para la entrega**, mueve el fichero privado a la carpeta personal y cambia la ruta a `Path.of(System.getProperty("user.home"), "config_mysql.properties")`. Comprueba que la conexión funciona también desde el JAR.
+**Para la entrega**, mueve el fichero privado a la carpeta personal y cambia la ruta a `Path.of(System.getProperty("user.home"), "config_mysql.properties")`. De esa manera nos aseguramos que la conexión funcione también desde un *JAR* en cualquier equipo.
 
 ## Parte 2 Ventana principal y mejora propia
 
 ### Guía de estilo
 
-Utiliza la [plantilla de la práctica](Plantilla_guia_de_estilo.md) para preparar `docs/guia-de-estilo.md`. Incluye el boceto de la ventana principal, paleta, tipografía, iconos, tamaños y márgenes. Muestra cómo se distinguen el foco, la sección activa, los mensajes de estado y los errores.
+Utiliza la [plantilla de la práctica](Plantilla_guia_de_estilo.md) para preparar `docs/guia-de-estilo.md`. Incluye la distribución de la ventana principal, los componentes visuales, la paleta, tipografía, iconos, tamaños o márgenes. Muestra cómo se distinguen el foco, la sección activa, los mensajes de estado y los errores.
 
-Aplica la guía al login, al registro y a la ventana principal. Puedes usar los recursos de la carpeta `Icons` del repositorio y copiar los que elijas a `src/main/resources/icons`.
+Aplica la guía al login, a las ventanas de registro y a la ventana principal. Puedes usar los recursos de la carpeta `Icons` del repositorio o copiar los que elijas a `src/main/resources/icons`.
 
 ### Diseño en Matisse
 
-Construye la ventana `Principal` en dos zonas. El **lateral** identifica la aplicación, muestra la sección activa y sitúa el nombre de la cuenta y **Cerrar sesión** al pie. El **área de trabajo** contiene las secciones **Usuarios**, **Notas** y **Preferencias**. Al iniciar sesión, se muestra Usuarios.
+Construye la ventana `Principal` en dos zonas. El **lateral** identifica la aplicación, muestra la sección activa y sitúa el nombre de la cuenta y **Cerrar sesión** al pie. El **área de trabajo** contiene las secciones **Usuarios**, **Notas** y **Preferencias**. Al iniciar sesión, se muestra una por defecto.
 
 Utiliza este **modelo de maqueta** como referencia para distribuir la ventana principal:
 
-1. Aplica `BorderLayout` a la ventana. Coloca un `JPanel` para el menú lateral en `WEST` y otro para el área de trabajo en `CENTER`.
-2. Aplica `CardLayout` al área de trabajo o panel central y añade tres `JPanel`: **Usuarios**, **Notas** y **Preferencias**. Cada botón lateral abre su panel con `CardLayout.show(...)`.
-3. Usa **Diseño libre** dentro de cada panel para colocar el título, las acciones y el contenido.
-
+1. Puedes aplicar un `BorderLayout` a la ventana. Coloca un `JPanel` para el menú lateral en `WEST` y otro para el área de trabajo en `CENTER`.
+2. Aplica `CardLayout` al área de trabajo o panel central y añade tres `JPanel`: **Usuarios**, **Notas** y **Preferencias**. Cada botón lateral abrirá su panel con `CardLayout.show(...)`.
+3. Utiliza un **diseño libre** dentro de cada panel para colocar el título, las acciones y el contenido.
 
 ![Maqueta modelo](media/maqueta_modelo.png)
 
 ### Menú lateral
 
-Organiza el menú lateral en tres bloques, de arriba abajo.
+Organiza el menú lateral en al menos **tres bloques**, de arriba abajo.
 
 | Bloque | Qué debe incluir |
 |---|---|
 | **Identidad de la aplicación** | Un icono sencillo y el nombre que hayas elegido para tu proyecto. |
-| **Navegación** | Los botones **Usuarios**, **Notas** y **Preferencias**. Cada botón muestra su sección en el área de trabajo. Al iniciar sesión, **Usuarios** aparece seleccionado. |
+| **Navegación** | Los tres botones que más adelantes podrás personalizar (*Usuarios*, *Notas* y *Preferencias*). Cada botón muestra su sección en el área de trabajo. Al iniciar sesión, **Usuarios** aparece seleccionado. |
 | **Sesión** | El nombre de la cuenta, un texto breve como «Sesión iniciada» y el botón **Cerrar sesión**, que devuelve al login. Coloca este bloque al pie del lateral. |
 
-Para redondear ligeramente las esquinas con FlatLaf, puedes añadir esta línea después de `initComponents()`, usando el nombre de tu botón:
+Para redondear ligeramente las esquinas con *FlatLaf*, puedes añadir esta línea después de `initComponents()`, usando el nombre de tu botón:
 
 ```java
 btnUsuarios.putClientProperty("FlatLaf.style", "arc: 12");
@@ -109,32 +107,45 @@ Añade un `JMenuBar` con dos menús.
 
 - **Archivo.** Incluye **Abrir…**, **Guardar…** y **Salir**. Usa `JFileChooser` para seleccionar el archivo de texto que se abrirá o guardará en **Notas**.
 - **Edición.** Incluye **Fuente y tamaño…**. Abre un diálogo para elegir una familia tipográfica y un tamaño. Aplica la elección a la interfaz y comprueba que los textos siguen siendo legibles y caben en los controles.
+- **Ayuda** Incluye **Info** con una ventana emergente mostrando nombre/apellidos y versión de la aplicación.
 
 ### Apartados principales
 
+Crea al menos estos tres apartados, cuyo contenido podrá personalizarse en el siguiente apartado:
+
 - **Usuarios.** Coloca **Nuevo usuario** y **Actualizar** junto al título. Muestra los datos de Aiven en un `JTable` de solo lectura dentro de un `JScrollPane`, con columnas para nombre, apellidos, usuario, fecha de nacimiento y correo. Incluye las cuentas sin datos opcionales y excluye las contraseñas. Debajo de la tabla, muestra el estado de la consulta.
-- **Notas.** Coloca un `JTextArea` editable dentro de un `JScrollPane`. Abre y guarda los archivos en UTF-8. Si hay cambios pendientes al abrir otro archivo, cerrar sesión o salir, ofrece **Guardar**, **Descartar** o **Cancelar**.
-- **Preferencias.** Incluye un control para alternar entre el tema claro y el oscuro, y un botón **Cambiar contraseña** que abra el formulario correspondiente a la cuenta de la sesión.
+- **Notas.** Coloca un `JTextArea` editable dentro de un `JScrollPane`. Abre y guarda los archivos en formato **texto** (UTF-8). Al abrir otro archivo, cerrar sesión o salir, avisa al usuario para que guarde o no sus cambios.
+- **Preferencias.** Incluye un control para alternar entre el tema claro y el oscuro, y un botón **Cambiar contraseña** del usuario actual, que abra una propia para el proceso.
 
 ![Maqueta modelo](media/apartado_usuarios.png) ![Maqueta modelo](media/apartado_notas.png) ![Maqueta modelo](media/apartado_preferencias.png)
 
 
-### Mejora propia
 
-Implementa **una** mejora que resuelva una necesidad de tu contexto. Puedes elegir una de estas propuestas o plantear otra de alcance parecido:
+## Parte 3. Mejoras propias. Pruebas y distribución
 
-| Idea | Ejemplo |
-|---|---|
-| Localizar registros | Filtrar el directorio por nombre o usuario. |
-| Agilizar tareas frecuentes | Añadir una barra de herramientas o un menú contextual al editor. Reutiliza las acciones que ya existen. |
-| Adaptar la lectura | Elegir un tamaño de letra o un color para el editor, manteniendo la legibilidad. |
-| Preparar documentos habituales | Incorporar una plantilla de notas según el ámbito de la aplicación. |
-| Añadir una vista de detalle | Mostrar los datos relevantes del registro seleccionado. |
-| Añadir un selector de color de tema | Utiliza un selector de color para modificar colores de componentes del tema |
+### Mejoras propias
+
+Personaliza los nombres y funciones de los botones **Usuarios** o **Notas**, acorde a las funciones de tu aplicación.
+
+Implementa **varias** de estas mejoras, que resuelvan las necesidades de tu aplicación/contexto. Puedes implementar varias de estas propuestas o plantear otra de alcance parecido:
+
+| Idea | Descripción | Dificultad |
+|---|---|---|
+| **Búsqueda y filtrado de registros** | Añade un campo de búsqueda que permita filtrar los registros del `JTable` por nombre, apellidos o usuario. La tabla debe actualizarse al escribir y permitir recuperar todos los registros al borrar el filtro. | Sencilla |
+| **Ordenación y recuento de registros** | Permite ordenar los registros pulsando sobre las cabeceras de la tabla. Muestra también el número de registros visibles, teniendo en cuenta los filtros aplicados. | Sencilla |
+| **Menú contextual** | Incorpora un menú que aparezca al pulsar el botón derecho del ratón sobre el editor de notas o la tabla de usuarios. Incluye acciones relacionadas con el componente seleccionado, reutilizando las funciones ya implementadas. | Sencilla |
+| **Contador de palabras y caracteres** | Muestra en la parte inferior del editor de notas el número de palabras y caracteres del documento. Actualiza los contadores automáticamente mientras se escribe. | Sencillo-medio |
+| **Ficha de detalle** | Al seleccionar un registro de la tabla, permite abrir un `JDialog` que muestre sus datos de forma organizada. No deben mostrarse contraseñas ni otros datos sensibles. | Media |
+| **Plantillas de documentos** | Incorpora al editor al menos dos plantillas de texto relacionadas con el contexto de tu aplicación. El usuario podrá seleccionar una plantilla y editar su contenido antes de guardarlo. | Media |
+| **Búsqueda dentro de las notas** | Añade una función para buscar palabras o expresiones dentro del contenido del `JTextArea`. Resalta la coincidencia encontrada y permite desplazarse a las siguientes apariciones. | Media |
+| **Deshacer y rehacer** | Permite deshacer y rehacer modificaciones realizadas en el editor de notas. Incorpora las opciones correspondientes en un menú y habilita los atajos `Ctrl+Z` y `Ctrl+Y`. | Media |
+| **Exportación de registros** | Añade una opción para exportar los registros visibles del directorio a un archivo CSV. Utiliza `JFileChooser` para elegir el destino y guarda el contenido en UTF-8, incluyendo los nombres de las columnas. | Media |
+| **Personalización del editor** | Utiliza `JColorChooser` para que el usuario pueda cambiar los colores del texto y del fondo del editor de notas. Incorpora una opción para recuperar los colores originales y evita combinaciones que dificulten la lectura. | Media |
+| **Nuevo apartado personalizado** | Añade una sección mediante `CardLayout` que resuelva una necesidad propia de tu aplicación, como gestionar actividades, tareas o sesiones. Debe permitir realizar al menos dos operaciones sobre los datos y conservar los cambios entre ejecuciones. | Medio-Avanzado |
+| **Carga de datos en segundo plano** | Utiliza `SwingWorker` para consultar los registros de Aiven sin bloquear la interfaz. Mientras se realiza la consulta, muestra un indicador de carga y evita que el usuario inicie varias consultas simultáneas. | Avanzado |
+| **Importación de usuarios desde CSV** | Permite seleccionar un archivo CSV con usuarios ficticios, validar los registros e importar los correctos a MySQL, mostrando un resumen de registros añadidos y rechazados. | Avanzado |
 
 Documenta qué problema resuelve, cómo se utiliza y cómo has comprobado su funcionamiento.
-
-## Parte 3. Pruebas y distribución
 
 ### Pruebas automatizadas
 
@@ -152,16 +163,16 @@ Agrega alguna prueba adicional.
 En `docs/index.md` incluye el contexto de uso, las funciones, capturas de la versión final, la organización del código, los pasos de configuración y ejecución, y el resultado de la revisión de usabilidad. Incluye el script SQL si has cambiado el esquema. Publica la plantilla de configuración con datos de ejemplo.
 
 
-### Uso Launch4J (Windows)
+### Creación de un instalador Launch4J (Windows)
 
 - Descarga e instala *Launch4j*.
 - Crea un nuevo proyecto en Launch4j y especifica el archivo JAR de tu proyecto en la sección "Jar".
 - Configura los parámetros que necesites, como la versión mínima de Java y el icono del ejecutable.
 - Selecciona el archivo de salida (.exe) y guarda el proyecto.
+- No te olvides agregar el fichero *config_mysql.properties* en una carpeta externa.
 - Haz clic en *Build wrapper* para generar el .exe.
 
 ### Comprobaciones de integración y pruebas manuales
-
 
 Conserva las pruebas de regresión de la 3.1 y añade los siguientes casos a `TEST/casos-prueba.md`. Registra el resultado, la fecha y una evidencia cuando aporte información.
 
@@ -188,7 +199,7 @@ Usa **OK**, **No cumple** o **No ejecutado**. Describe los fallos encontrados y 
 
 En `docs/index.md` incluye descripción, funcionalidades, capturas, responsabilidades de los paquetes, preparación de Aiven, valores del url accedido —sin sus valores secretos—, ejecución del JAR y ejecución de pruebas. Documenta con Javadoc las clases principales del modelo y al menos dos de sus métodos.
 
-Añade al README un enlace a la documentación y al informe de pruebas. Si mantienes GitHub Pages de las prácticas previas, comprueba su publicación.
+Añade al *README* un enlace a la documentación y al informe de pruebas. Si mantienes GitHub Pages de las prácticas previas, comprueba su publicación.
 
 Antes de entregar:
 
