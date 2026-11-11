@@ -93,11 +93,20 @@ Organiza el menú lateral en al menos **tres bloques**, de arriba abajo.
 | **Navegación** | Los tres botones que más adelantes podrás personalizar (*Usuarios*, *Notas* y *Preferencias*). Cada botón muestra su sección en el área de trabajo. Al iniciar sesión, **Usuarios** aparece seleccionado. |
 | **Sesión** | El nombre de la cuenta, un texto breve como «Sesión iniciada» y el botón **Cerrar sesión**, que devuelve al login. Coloca este bloque al pie del lateral. |
 
-Para redondear ligeramente las esquinas con *FlatLaf*, puedes añadir esta línea después de `initComponents()`, usando el nombre de tu botón:
+Puedes aplicar un estilo FlatLaf moderno a los tres botones del menú lateral
 
 ```java
-btnUsuarios.putClientProperty("FlatLaf.style", "arc: 12");
+String estiloLateral = "arc: 12; borderWidth: 0; "
+        + "hoverBackground: #2a537f; "
+        + "pressedBackground: #204570; "
+        + "focusedBackground: #2a537f; "
+        + "focusWidth: 2; focusColor: #a8d2ff";
+btnUsuarios.putClientProperty("FlatLaf.style", estiloLateral);
 ```
+
+- `arc` redondea las esquinas y `borderWidth: 0` elimina el borde habitual.
+- `hoverBackground` cambia el fondo al pasar el ratón y `pressedBackground` lo cambia mientras se pulsa el botón.
+- `focusedBackground` cambia el fondo al recibir el foco. `focusWidth` y `focusColor` definen el grosor y el color del contorno que ayuda a localizarlo con el teclado.
 
 En el evento de cada botón de navegación, muestra la tarjeta correspondiente con `CardLayout.show(...)` y actualiza el resaltado. Comprueba con **Tab** que el foco se distingue del resaltado de la sección activa.
 
@@ -118,7 +127,6 @@ Crea al menos estos tres apartados, cuyo contenido podrá personalizarse en el s
 - **Preferencias.** Incluye un control para alternar entre el tema claro y el oscuro, y un botón **Cambiar contraseña** del usuario actual, que abra una propia para el proceso.
 
 ![Maqueta modelo](media/apartado_usuarios.png) ![Maqueta modelo](media/apartado_notas.png) ![Maqueta modelo](media/apartado_preferencias.png)
-
 
 
 ## Parte 3. Mejoras propias. Pruebas y distribución
@@ -147,11 +155,14 @@ Implementa **varias** de estas mejoras, que resuelvan las necesidades de tu apli
 
 Documenta qué problema resuelve, cómo se utiliza y cómo has comprobado su funcionamiento.
 
+- **Carga en segundo plano.** Consulta Aiven en `doInBackground()` y actualiza la tabla en `done()`, como en el código de la práctica. [Trabajar en segundo plano con `SwingWorker` (Java 21)](https://docs.oracle.com/en/java/javase/21/docs/api/java.desktop/javax/swing/SwingWorker.html)
+- **Importar datos desde CSV.** Usa Apache Commons CSV para leer las filas y acceder a las columnas por su encabezado. Después, aplica las validaciones del proyecto y guarda en MySQL los registros válidos. [Leer archivos CSV en Java con Apache Commons CSV](https://commons.apache.org/proper/commons-csv/apidocs/index.html)
+
 ### Pruebas automatizadas
 
 Vuelve a ejecutar las pruebas de la 3.1 como **regresión**. Mantén **JUnit 4** y **AssertJ Swing** con ámbito `test`.
 
-Agrega alguna prueba adicional.
+Agrega al menos **dos pruebas** automatizadas adicionales.
 
 ### Empaquetado y entrega
 
