@@ -169,7 +169,7 @@ Agrega al menos **dos pruebas** automatizadas adicionales.
 
 ### Empaquetado e instalador
 
-Genera el JAR con dependencias** y comprueba que arranca fuera de NetBeans.
+Genera el JAR con dependencias y comprueba que arranca fuera de NetBeans.
 
 **Creación del ejecutable**
 
