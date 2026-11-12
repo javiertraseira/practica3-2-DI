@@ -148,7 +148,8 @@ Implementa **varias** de estas mejoras, que resuelvan las necesidades de tu apli
 | **Búsqueda dentro de las notas** | Añade una función para buscar palabras o expresiones dentro del contenido del `JTextArea`. Resalta la coincidencia encontrada y permite desplazarse a las siguientes apariciones. | Media |
 | **Deshacer y rehacer** | Permite deshacer y rehacer modificaciones realizadas en el editor de notas. Incorpora las opciones correspondientes en un menú y habilita los atajos `Ctrl+Z` y `Ctrl+Y`. | Media |
 | **Exportación de registros** | Añade una opción para exportar los registros visibles del directorio a un archivo CSV. Utiliza `JFileChooser` para elegir el destino y guarda el contenido en UTF-8, incluyendo los nombres de las columnas. | Media |
-| **Personalización del editor** | Utiliza `JColorChooser` para que el usuario pueda cambiar los colores del texto y del fondo del editor de notas. Incorpora una opción para recuperar los colores originales y evita combinaciones que dificulten la lectura. | Media |
+| **Personalización del editor** | Utiliza `JColorChooser` para que el usuario pueda cambiar los colores del texto y del fondo del editor de notas. Incorpora una opción para recuperar los colores originales y evita combinaciones que dificulten la lectura. | Avanzado |
+| **Personalización de fuentes** | El usuario podrá cargar las fuentes del sistema para seleccionar una para toda la aplicación. | Avanzado |
 | **Nuevo apartado personalizado** | Añade una sección mediante `CardLayout` que resuelva una necesidad propia de tu aplicación, como gestionar actividades, tareas o sesiones. Debe permitir realizar al menos dos operaciones sobre los datos y conservar los cambios entre ejecuciones. | Medio-Avanzado |
 | **Carga de datos en segundo plano** | Utiliza `SwingWorker` para consultar los registros de Aiven sin bloquear la interfaz. Mientras se realiza la consulta, muestra un indicador de carga y evita que el usuario inicie varias consultas simultáneas. | Avanzado |
 | **Importación de usuarios desde CSV** | Permite seleccionar un archivo CSV con usuarios ficticios, validar los registros e importar los correctos a MySQL, mostrando un resumen de registros añadidos y rechazados. | Avanzado |
@@ -166,14 +167,27 @@ Vuelve a ejecutar las pruebas de la 3.1 como **regresión**. Mantén **JUnit 4**
 
 Agrega al menos **dos pruebas** automatizadas adicionales.
 
-### Empaquetado y distribución (instalador)
+### Empaquetado e instalador
 
-1. **Genera el JAR con dependencias** y comprueba que arranca fuera de NetBeans.
-2. **Prepara la distribución/instalación para Windows** con una de estas opciones:
-   - **Launch4j.** Selecciona el JAR, indica el `.exe` de salida y configura Java 21 como versión mínima. Pulsa **Build wrapper** y documenta cómo debe estar disponible Java en el equipo de destino. [Guía de Launch4j](https://launch4j.sourceforge.net/docs.html)
-   - Como alternativa también puede usar **`jpackage --type app-image`.** Entrega la carpeta completa que genera, con el lanzador `.exe` y el entorno Java incluido. [Guía de empaquetado de Java 21](https://docs.oracle.com/en/java/javase/21/jpackage/packaging-overview.html)
-3. **Prueba la distribución** desde otra carpeta. Comprueba que arranca, carga sus recursos y lee `config_mysql.properties` desde la carpeta personal. Incluye en la entrega únicamente `config_mysql.properties.example` con valores ficticios.
-4. **Entrega el repositorio** con el código y las pruebas. Adjunta el JAR y la distribución para Windows o indica dónde descargarlos. Enlaza desde el README `docs/index.md`, la guía de estilo y el informe de pruebas.
+Genera el JAR con dependencias** y comprueba que arranca fuera de NetBeans.
+
+**Creación del ejecutable**
+
+Prepara una versión ejecutable de la aplicación utilizando una de estas herramientas:
+
+- **Launch4j.** Selecciona el JAR, indica el `.exe` de salida, añade un icono personalizado y configura Java 21 como versión mínima. Pulsa **Build wrapper** y documenta cómo debe estar disponible Java en el equipo de destino. [Guía de Launch4j](https://launch4j.sourceforge.net/docs.html).
+- **jpackage.** Utiliza `jpackage --type app-image` para generar una distribución que incluya el lanzador `.exe` y el entorno de ejecución de Java. Conserva la carpeta completa generada. [Guía de empaquetado de Java 21](https://docs.oracle.com/en/java/javase/21/jpackage/packaging-overview.html).
+
+**Creación del instalador**
+
+Crea un **instalador para Windows** que permita distribuir la aplicación e instalarla en otros equipos.
+
+Utiliza **Inno Setup** para generar el instalador a partir del ejecutable y los archivos obtenidos en el apartado anterior.
+
+- Descarga e instala [Inno Setup](https://jrsoftware.org/isinfo.php).
+
+Si has utilizado Launch4j, asegúrate de que el equipo de destino dispone de un entorno Java compatible o inclúyelo y configúralo en la distribución. Si has utilizado `jpackage --type app-image`, incluye toda la carpeta generada, incluido su entorno Java.
+
 
 En `docs/index.md`, incluye el contexto, las funciones, las capturas, la organización del código, los pasos de configuración y ejecución y el resultado de la revisión de usabilidad. Si has modificado el esquema de la base de datos, adjunta el script SQL.
 
@@ -219,5 +233,6 @@ Antes de entregar:
 - [ ] Se han implementado y probado al menos dos mejoras, elegidas de la lista o de propuesta propia. La documentación explica qué aporta cada una y cómo se ha comprobado.
 - [ ] Se han vuelto a ejecutar las pruebas de la 3.1 y se han añadido al menos dos pruebas automatizadas. Los resultados están en `TEST/casos-prueba.md`.
 - [ ] El JAR con dependencias y la distribución para Windows se han probado fuera de NetBeans. Ambos se adjuntan a la entrega o tienen un enlace de descarga.
+- [ ] Se ha creado y probado el instalador de la aplicación.
 - [ ] Se ha realizado la revisión de usabilidad según los requerimientos y registrado conclusiones.
 - [ ] El README enlaza `docs/index.md`, la guía de estilo y el informe de pruebas. Las ramas están integradas en `main` y las incidencias están documentadas.
